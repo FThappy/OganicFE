@@ -2,6 +2,7 @@
 
 import { ButtonGlobal } from '@/components/ButtonGlobal/Button';
 import { LinkGlobal } from '@/components/LinkGlobal/LinkGlobal';
+import Icons from '@/constants/svgIcon';
 import { greenDefault } from '@/lib/content';
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
       <LinkGlobal link='/' size='small' className='group  z-50' animation='middle' primary={false}>
         <p className='font-semibold group-hover:animate-green-to-white animate-white-to-green  z-50'>Normal</p>
       </LinkGlobal>
+      <Icons.IconHeaderRight />
     </main>
   );
 }
