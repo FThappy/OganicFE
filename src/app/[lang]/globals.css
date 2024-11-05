@@ -33,7 +33,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
     --soft-primary-green: 122, 46%, 67%;
-    --primary-green: 122, 100%, 35%;
+    --primary-green: 122, 100%, 35%; /* 00B207*/
     --hard-primary-green: 122, 45%, 31%;
     --warning: 32, 100%, 50%;
     --danger: 1, 79%, 60%;
@@ -106,4 +106,10 @@ input[type='number'] {
 input[type='number'][disabled] {
   color: back;
   font-weight: 500;
+}
+#search::-webkit-search-cancel-button {
+  position: relative;
+  right: -3px;
+  cursor: pointer;
+  display: none;
 }

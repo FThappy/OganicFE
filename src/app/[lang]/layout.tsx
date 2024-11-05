@@ -8,6 +8,8 @@ import { getMessages } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import NextTopLoader from 'nextjs-toploader';
 import ToastifyContainer from '@/components/ToastifyContainer/ToastifyContainer';
+import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 
 export const metadata: Metadata = {
   title: 'Ecobazar',
@@ -34,7 +36,11 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={`antialiased ${popin.className}`}>
         <NextTopLoader showSpinner={false} />
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>
+          <Header />
+          <main className='mt-[198px]'>{children}</main>
+          <Footer />
+        </NextIntlClientProvider>
         <ToastifyContainer />
       </body>
     </html>

@@ -1,6 +1,14 @@
 {
   "HomePage": {
     "title": "Xin chào",
-    "about": "Go to the about page"
+    "home": "Trang chủ",
+    "shop": "Sản phẩm",
+    "faq": "FAQ",
+    "blog": "Tin tức",
+    "about": "Giới thiệu",
+    "contact": "Liên hệ"
+  },
+  "Footer": {
+    "title": "Nông sản sạch là những sản phẩm được trồng tự nhiên, không sử dụng hóa chất độc hại. Việc tiêu thụ nông sản sạch không chỉ tốt cho sức khỏe mà còn bảo vệ môi trường và hỗ trợ nông dân bền vững."
   }
 }

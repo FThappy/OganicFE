@@ -1,6 +1,14 @@
 {
   "HomePage": {
     "title": "Hello world!",
-    "about": "Go to the about page"
+    "home": "Home",
+    "shop": "Shop",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "Footer": {
+    "title": "Clean produce is grown without harmful chemicals. Consuming it is good for health and supports sustainable farming."
   }
 }
