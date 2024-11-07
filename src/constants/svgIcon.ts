@@ -14,6 +14,7 @@ import Cart from '@/assets/svgIcon/Cart.svg';
 import Discover from '@/assets/svgIcon/Discover.svg';
 import Visa from '@/assets/svgIcon/Visa.svg';
 import Mastercard from '@/assets/svgIcon/Mastercard.svg';
+import ArrowRight from '@/assets/svgIcon/ArrowRight.svg';
 
 const Icons = {
   IconHeaderRight,
@@ -31,7 +32,8 @@ const Icons = {
   Cart,
   Discover,
   Mastercard,
-  Visa
+  Visa,
+  ArrowRight
 };
 
 export default Icons;

@@ -110,6 +110,19 @@ const config: Config = {
             height: '0'
           }
         },
+        wave: {
+          '0%': { transform: 'translateY(-2px)' },
+          '50%': { transform: 'translateY(4px)' },
+          '100%': { transform: 'translateY(-2px)' }
+        },
+        move: {
+          '0%': { transform: 'translateX(0px)' },
+          '100%': { transform: 'translateX(16px)' }
+        },
+        moveReverse: {
+          '0%': { transform: 'translateX(16px)' },
+          '100%': { transform: 'translateX(0px)' }
+        },
         'white-to-red': {
           '0%': { color: '#F0EFFF' },
           '50%': { color: '#FFEBED' },
@@ -132,10 +145,13 @@ const config: Config = {
         }
       },
       animation: {
+        'icon-move': 'wave 1.5s ease-in-out infinite',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'white-to-green': 'white-to-green 0.5s linear forwards',
-        'green-to-white': 'green-to-white 0.5s  ease-in-out forwards'
+        'green-to-white': 'green-to-white 0.5s  ease-in-out forwards',
+        move: 'move 0.5s ease-in-out  forwards',
+        moveReverse: 'moveReverse 0.5s ease-in-out  forwards'
       }
     }
   },

@@ -4,23 +4,14 @@ import Icons from '@/constants/svgIcon';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
-type Props = {};
-
-const Footer = (props: Props) => {
+const Footer = () => {
   const t = useTranslations('Footer');
 
   return (
     <footer className='relative w-screen h-[400px]'>
       <div className='absolute top-0 w-full z-[10] h-full bg-black opacity-90 ' />
-      <Image
-        src='/bg-footer.png'
-        alt='Background Footer'
-        fill
-        style={{ objectFit: 'cover' }}
-        className='absolute top-0 z-[60]'
-        loading='lazy'
-      />
-      <section className='relative z-[100] text-white flex flex-col items-center pt-[80px] w-full h-full'>
+      <Image src='/bg-footer.png' alt='Background Footer' fill className='absolute top-0 z-[60] ' loading='lazy' />
+      <section className='relative z-[100] text-white flex flex-col items-center pt-[40px] w-full h-full'>
         <div className='flex container items-start justify-between w-full '>
           <section className='flex flex-col gap-4 w-[300px]'>
             <section className='flex gap-2 items-center cursor-pointer'>
@@ -122,7 +113,7 @@ const Footer = (props: Props) => {
             </nav>
           </section>
         </div>
-        <section className='flex  mt-[4.8rem]  items-center justify-center w-full py-6 border-t border-t-slate-100/25'>
+        <section className='flex  mt-[4.8rem]  items-center justify-center w-full pt-6 border-t border-t-slate-100/25 '>
           <section className='container flex items-center justify-between w-full'>
             <p className='text-[14px] text-gray-5'>Ecobazar eCommerce © 2024. All Rights Reserved.</p>
             <div className='flex items-center gap-2'>
@@ -138,11 +129,12 @@ const Footer = (props: Props) => {
       <Image
         src='/leaf2.png'
         alt='Leaf 1'
-        className='absolute top-[300px] left-[142.5px] z-[100] rotate-[0deg]'
+        className='absolute top-[300px] left-[142.5px] z-[100] rotate-[0deg] animate-icon-move w-auto h-auto'
         loading='lazy'
         width={48}
         height={71}
         quality={100}
+        style={{ width: 'auto', height: 'auto' }}
       />
     </footer>
   );

@@ -5,7 +5,7 @@ import NavLink from './components/NavLink';
 
 const Header = () => {
   return (
-    <header className='w-screen fixed top-0 z-[99]'>
+    <header className='w-screen fixed top-0 z-[999]'>
       <DescriptionHeader />
       <MiddleHeader />
       <NavLink />

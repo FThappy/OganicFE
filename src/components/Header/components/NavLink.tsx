@@ -5,9 +5,7 @@ import { Link, usePathname } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
-type Props = {};
-
-const NavLink = (props: Props) => {
+const NavLink = () => {
   const t = useTranslations('HomePage');
   const link_nav = [
     { label: t('home'), to: URL_PATHS.home },

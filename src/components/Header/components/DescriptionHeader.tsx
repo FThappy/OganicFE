@@ -5,9 +5,7 @@ import { Link, usePathname, useRouter } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
 import React from 'react';
 
-type Props = {};
-
-const DescriptionHeader = (props: Props) => {
+const DescriptionHeader = () => {
   const pathname = usePathname();
   const router = useRouter();
   const locale = useLocale();
