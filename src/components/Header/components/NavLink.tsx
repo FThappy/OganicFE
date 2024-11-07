@@ -19,7 +19,7 @@ const NavLink = (props: Props) => {
   ];
   const path = usePathname();
   return (
-    <section className='bg-gray-8 w-full text-[14px]'>
+    <section className='bg-[#1A1A1A] w-full text-[14px]'>
       <section className='container flex items-center justify-between'>
         <nav className=' py-3 flex gap-8 items-center font-medium '>
           {link_nav.map((item, index) => (

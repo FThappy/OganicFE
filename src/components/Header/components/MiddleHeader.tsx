@@ -21,7 +21,7 @@ const MiddleHeader = (props: Props) => {
             placeHoderSearch='Search'
             additionalClass='w-[400px]  focus-visible:ring-green-soft rounded-r-[0]'
           />
-          <Button className='h-[45px] rounded-[6px] rounded-l-[0] px-6 py-[14px] bg-green text-[14px] font-semibold border border-transparent  '>
+          <Button className='h-[45px] rounded-[6px] rounded-l-[0] px-6 py-[14px] bg-green text-[14px] font-semibold border border-transparent  hover:bg-green hover:opacity-75'>
             Search
           </Button>
         </section>

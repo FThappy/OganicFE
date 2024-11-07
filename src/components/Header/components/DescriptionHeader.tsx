@@ -1,13 +1,5 @@
 'use client';
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue
-} from '@/components/ui/select';
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Icons from '@/constants/svgIcon';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
@@ -20,7 +12,7 @@ const DescriptionHeader = (props: Props) => {
   const router = useRouter();
   const locale = useLocale();
   return (
-    <section className='bg-gray-8 w-full'>
+    <section className='bg-[#1A1A1A] w-full'>
       <div className='container text-gray-3 py-3 flex justify-between items-center'>
         <div className='flex items-center gap-2'>
           <Icons.MapPin />
@@ -28,7 +20,7 @@ const DescriptionHeader = (props: Props) => {
         </div>
         <div className='flex items-center gap-[20px]'>
           <Select value={locale} onValueChange={value => router.replace(pathname, { locale: value })}>
-            <SelectTrigger className='gap-[6px] border-none w-auto focus:ring-0'>
+            <SelectTrigger className='gap-[6px] border-none w-auto focus:ring-0' aria-label='Select language'>
               <SelectValue placeholder='Select' />
             </SelectTrigger>
             <SelectContent className='min-w-[1rem] w-[5rem]'>
@@ -43,7 +35,7 @@ const DescriptionHeader = (props: Props) => {
             </SelectContent>
           </Select>
           <Select value={locale}>
-            <SelectTrigger className='gap-[6px] border-none w-auto focus:ring-0'>
+            <SelectTrigger className='gap-[6px] border-none w-auto focus:ring-0' aria-label='Select language'>
               <SelectValue placeholder='Select' />
             </SelectTrigger>
             <SelectContent className='min-w-[1rem] w-[5rem]'>

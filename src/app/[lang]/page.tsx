@@ -1,5 +1,11 @@
 'use client';
 
+import Welcome from '@/components/Home/Welcome';
+
 export default function Home() {
-  return <main className={``}>aaaaa</main>;
+  return (
+    <main className={``}>
+      <Welcome />
+    </main>
+  );
 }
