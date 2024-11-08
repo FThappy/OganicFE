@@ -15,6 +15,16 @@ import Discover from '@/assets/svgIcon/Discover.svg';
 import Visa from '@/assets/svgIcon/Visa.svg';
 import Mastercard from '@/assets/svgIcon/Mastercard.svg';
 import ArrowRight from '@/assets/svgIcon/ArrowRight.svg';
+import Pumkin from '@/assets/svgIcon/Pumkin.svg';
+import Bag from '@/assets/svgIcon/Bag.svg';
+import Start from '@/assets/svgIcon/Start.svg';
+import Eye from '@/assets/svgIcon/Eye.svg';
+import Heart from '@/assets/svgIcon/Heart.svg';
+import FreeShipping from '@/assets/svgIcon/FreeShipping.svg';
+import Support from '@/assets/svgIcon/Support.svg';
+import Secure from '@/assets/svgIcon/Secure.svg';
+import MoneyBack from '@/assets/svgIcon/MoneyBack.svg';
+import Accept from '@/assets/svgIcon/Accept.svg';
 
 const Icons = {
   IconHeaderRight,
@@ -33,7 +43,17 @@ const Icons = {
   Discover,
   Mastercard,
   Visa,
-  ArrowRight
+  ArrowRight,
+  Pumkin,
+  Bag,
+  Start,
+  Eye,
+  Heart,
+  FreeShipping,
+  Support,
+  Secure,
+  MoneyBack,
+  Accept
 };
 
 export default Icons;

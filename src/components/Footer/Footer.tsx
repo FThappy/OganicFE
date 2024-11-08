@@ -113,7 +113,7 @@ const Footer = () => {
             </nav>
           </section>
         </div>
-        <section className='flex  mt-[4.8rem]  items-center justify-center w-full pt-6 border-t border-t-slate-100/25 '>
+        <section className='flex  mt-[7rem]  items-center justify-center w-full pt-6 border-t border-t-slate-100/25 '>
           <section className='container flex items-center justify-between w-full'>
             <p className='text-[14px] text-gray-5'>Ecobazar eCommerce © 2024. All Rights Reserved.</p>
             <div className='flex items-center gap-2'>

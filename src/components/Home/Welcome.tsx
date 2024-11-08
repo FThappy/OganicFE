@@ -5,10 +5,14 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { LinkGlobal } from '../LinkGlobal/LinkGlobal';
 import { FaArrowRight } from 'react-icons/fa6';
 import Autoplay from 'embla-carousel-autoplay';
+import { useTranslations } from 'next-intl';
+import Icons from '@/constants/svgIcon';
 
 const Welcome = () => {
+  const t = useTranslations('HomePage');
+
   return (
-    <section className='relative w-screen h-[640px] items-center justify-center'>
+    <section className='relative w-screen h-[640px] items-center justify-center mb-12'>
       <Image src='/bg1.jpg' alt='Background Footer' fill className='absolute top-0 z-[60] ' quality={100} priority />
       <Carousel
         opts={{ loop: true }}
@@ -112,6 +116,36 @@ const Welcome = () => {
         quality={100}
         style={{ width: 'auto', height: 'auto' }}
       />
+      <section className='w-[1400px] p-10 rounded-[8px] bg-white absolute left-0 bottom-[-6rem] right-0 z-[99] m-auto h-[128px] shadow-lg flex items-center justify-between'>
+        <section className='flex items-center gap-4'>
+          <Icons.FreeShipping />
+          <div className=''>
+            <p className='text-gray-9 font-medium'>{t('freeship')}</p>
+            <p className='text-gray-4 font-normal text-[14px]'>{t('freeshipD')}</p>
+          </div>
+        </section>
+        <section className='flex items-center gap-4'>
+          <Icons.Support />
+          <div className=''>
+            <p className='text-gray-9 font-medium'>{t('support24/7')}</p>
+            <p className='text-gray-4 font-normal text-[14px]'>{t('support24/7D')}</p>
+          </div>
+        </section>
+        <section className='flex items-center gap-4'>
+          <Icons.Secure />
+          <div className=''>
+            <p className='text-gray-9 font-medium'>{t('secure')}</p>
+            <p className='text-gray-4 font-normal text-[14px]'>{t('secureD')}</p>
+          </div>
+        </section>
+        <section className='flex items-center gap-4'>
+          <Icons.MoneyBack />
+          <div className=''>
+            <p className='text-gray-9 font-medium'>{t('moneyback')}</p>
+            <p className='text-gray-4 font-normal text-[14px]'>{t('moneybackD')}</p>
+          </div>
+        </section>
+      </section>
     </section>
   );
 };

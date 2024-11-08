@@ -115,6 +115,11 @@ const config: Config = {
           '50%': { transform: 'translateY(4px)' },
           '100%': { transform: 'translateY(-2px)' }
         },
+        dropdownIcon: {
+          '0%': { transform: 'translateY(-24px)' },
+          '50%': { transform: 'translateY(-12px)' },
+          '100%': { transform: 'translateY(0px)' }
+        },
         move: {
           '0%': { transform: 'translateX(0px)' },
           '100%': { transform: 'translateX(16px)' }
@@ -129,19 +134,29 @@ const config: Config = {
           '100%': { color: '#FF2D46' }
         },
         'white-to-green': {
-          '0%': { color: 'white' },
-          '50%': { color: '#00B207' },
-          '100%': { color: '#00B207' }
+          '0%': { color: 'white', stroke: 'white' },
+          '50%': { color: '#00B207', stroke: '#00B207' },
+          '100%': { color: '#00B207', stroke: '#00B207' }
         },
         'green-to-white': {
-          '0%': { color: '#00B207' },
-          '50%': { color: 'white' },
-          '100%': { color: 'white' }
+          '0%': { color: '#00B207', stroke: '#00B207' },
+          '50%': { color: 'white', stroke: 'white' },
+          '100%': { color: 'white', stroke: 'white' }
         },
         'blue-to-white': {
           '0%': { color: '#2388FF' },
           '50%': { color: '#4285F4' },
           '100%': { color: 'white' }
+        },
+        'green-to-orange': {
+          '0%': { stroke: '#00B207', color: '#00B207' },
+          '50%': { stroke: '#00B207', color: '#00B207' },
+          '100%': { stroke: '#FF8A00', color: '#FF8A00' }
+        },
+        'orange-to-green': {
+          '0%': { stroke: '#FF8A00', color: '#FF8A00' },
+          '50%': { stroke: '#FF8A00', color: '#FF8A00' },
+          '100%': { stroke: '#00B207', color: '#00B207' }
         }
       },
       animation: {
@@ -150,8 +165,11 @@ const config: Config = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'white-to-green': 'white-to-green 0.5s linear forwards',
         'green-to-white': 'green-to-white 0.5s  ease-in-out forwards',
+        'green-to-orange': 'green-to-orange 0.5s  linear forwards',
+        'orange-to-green': 'orange-to-green 0.5s  linear forwards',
         move: 'move 0.5s ease-in-out  forwards',
-        moveReverse: 'moveReverse 0.5s ease-in-out  forwards'
+        moveReverse: 'moveReverse 0.5s ease-in-out  forwards',
+        dropdownIcon: 'dropdownIcon 0.25s linear  '
       }
     }
   },
