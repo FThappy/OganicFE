@@ -13,7 +13,15 @@ const Welcome = () => {
 
   return (
     <section className='relative w-screen h-[640px] items-center justify-center mb-12'>
-      <Image src='/bg1.jpg' alt='Background Footer' fill className='absolute top-0 z-[60] ' quality={100} priority />
+      <Image
+        src='/bg1.jpg'
+        alt='Background Footer'
+        fill
+        className='absolute top-0 z-[60] '
+        quality={100}
+        priority
+        sizes='100%'
+      />
       <Carousel
         opts={{ loop: true }}
         plugins={[
@@ -29,7 +37,7 @@ const Welcome = () => {
         <CarouselContent className='h-full'>
           <CarouselItem className='h-full flex items-center gap-8'>
             <div className=' relative h-[498px] w-full'>
-              <Image src='/banner1.png' alt='Background Footer' fill quality={100} priority />
+              <Image src='/banner1.png' alt='Background Footer' fill quality={100} priority sizes='100%' />
             </div>
             <div className='flex flex-col w-full gap-4'>
               <p className='font-medium text-[14px] text-green tracking-[2%]'>WELCOME TO SHOPERY</p>
@@ -54,7 +62,7 @@ const Welcome = () => {
           </CarouselItem>
           <CarouselItem className='h-full flex items-center gap-8'>
             <div className=' relative h-[498px] w-full'>
-              <Image src='/banner1.png' alt='Background Footer' fill quality={100} priority />
+              <Image src='/banner1.png' alt='Background Footer' fill quality={100} priority sizes='100%' />
             </div>
             <div className='flex flex-col w-full gap-4'>
               <p className='font-medium text-[14px] text-green tracking-[2%]'>WELCOME TO SHOPERY2</p>
@@ -79,7 +87,7 @@ const Welcome = () => {
           </CarouselItem>
           <CarouselItem className='h-full flex items-center gap-8'>
             <div className=' relative h-[498px] w-full'>
-              <Image src='/banner1.png' alt='Background Footer' fill quality={100} priority />
+              <Image src='/banner1.png' alt='Background Footer' fill quality={100} priority sizes='100%' />
             </div>
             <div className='flex flex-col w-full gap-4'>
               <p className='font-medium text-[14px] text-green tracking-[2%]'>WELCOME TO SHOPERY3</p>

@@ -120,6 +120,11 @@ const config: Config = {
           '50%': { transform: 'translateY(-12px)' },
           '100%': { transform: 'translateY(0px)' }
         },
+        dropdownHorizontalIcon: {
+          '0%': { transform: 'translateX(-24px)' },
+          '50%': { transform: 'translateX(-12px)' },
+          '100%': { transform: 'translateX(0px)' }
+        },
         move: {
           '0%': { transform: 'translateX(0px)' },
           '100%': { transform: 'translateX(16px)' }
@@ -169,7 +174,8 @@ const config: Config = {
         'orange-to-green': 'orange-to-green 0.5s  linear forwards',
         move: 'move 0.5s ease-in-out  forwards',
         moveReverse: 'moveReverse 0.5s ease-in-out  forwards',
-        dropdownIcon: 'dropdownIcon 0.25s linear  '
+        dropdownIcon: 'dropdownIcon 0.25s linear  ',
+        dropdownHorizontalIcon: 'dropdownHorizontalIcon 0.25s linear  '
       }
     }
   },

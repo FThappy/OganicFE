@@ -15,6 +15,18 @@ const WhyChoseUs = () => {
         priority
         sizes='100%'
       />
+      <div className='absolute top-[445px] left-[14%] z-[101]  animate-icon-move  w-auto h-auto '>
+        <Image
+          src='/leaf2.png'
+          alt='Leaf 1'
+          loading='lazy'
+          width={60}
+          height={88}
+          className='rotate-[5deg]'
+          quality={100}
+          style={{ width: 'auto', height: 'auto' }}
+        />
+      </div>
       <section className='relative container h-full w-full flex  pt-24 justify-center gap-4 z-[100]'>
         <div className='w-full flex gap-4 items-starts'>
           <div className='relative w-[276px] h-[400px]'>

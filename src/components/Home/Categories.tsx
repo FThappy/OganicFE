@@ -68,6 +68,18 @@ const Categories = () => {
         quality={100}
         priority
       />
+      <div className='absolute top-[-60px] left-[10%] z-[100]  animate-icon-move  w-auto h-auto '>
+        <Image
+          src='/leaf1.png'
+          alt='Leaf 1'
+          loading='lazy'
+          width={72}
+          height={107}
+          className='rotate-[265deg]'
+          quality={100}
+          style={{ width: 'auto', height: 'auto' }}
+        />
+      </div>
       <section className='relative container h-full w-full flex flex-col items-center justify-center gap-4 z-[100]'>
         <section className='flex w-full items-center justify-between'>
           <p className='text-gray-9 text-[40px] font-semibold'>{t('categories')}</p>

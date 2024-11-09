@@ -25,7 +25,23 @@ import Support from '@/assets/svgIcon/Support.svg';
 import Secure from '@/assets/svgIcon/Secure.svg';
 import MoneyBack from '@/assets/svgIcon/MoneyBack.svg';
 import Accept from '@/assets/svgIcon/Accept.svg';
-
+import SaleTimeIcon1 from '@/assets/svgIcon/SaleTimeIcon1.svg';
+import SaleTimeIcon2 from '@/assets/svgIcon/SaleTimeIcon2.svg';
+import SaleTimeIcon3 from '@/assets/svgIcon/SaleTimeIcon3.svg';
+import Tag from '@/assets/svgIcon/Tag.svg';
+import User from '@/assets/svgIcon/User.svg';
+import Message from '@/assets/svgIcon/Message.svg';
+import Testimonial from '@/assets/svgIcon/Testimonial.svg';
+import GSeries from '@/assets/svgIcon/Gseries.svg';
+import BookOff from '@/assets/svgIcon/bookoff-corporation-logo.svg';
+import Food from '@/assets/svgIcon/food.svg';
+import FoodFm from '@/assets/svgIcon/foodfm.svg';
+import Mango from '@/assets/svgIcon/mango-1.svg';
+import LocalSub from '@/assets/svgIcon/local.svg';
+import PhoneSub from '@/assets/svgIcon/phoneSub.svg';
+import MailSub from '@/assets/svgIcon/mailSub.svg';
+import Carrot from '@/assets/svgIcon/Carrot.svg';
+import Vegetable from '@/assets/svgIcon/Vegetable.svg';
 const Icons = {
   IconHeaderRight,
   MapPin,
@@ -53,7 +69,24 @@ const Icons = {
   Support,
   Secure,
   MoneyBack,
-  Accept
+  Accept,
+  SaleTimeIcon1,
+  SaleTimeIcon2,
+  SaleTimeIcon3,
+  Tag,
+  User,
+  Message,
+  Testimonial,
+  GSeries,
+  Food,
+  FoodFm,
+  Mango,
+  BookOff,
+  LocalSub,
+  PhoneSub,
+  MailSub,
+  Carrot,
+  Vegetable
 };
 
 export default Icons;

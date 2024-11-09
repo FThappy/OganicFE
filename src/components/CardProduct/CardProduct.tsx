@@ -38,7 +38,7 @@ const CardProduct = (props: Props) => {
         <div className='w-10 h-10 group/heart rounded-full flex items-center justify-center bg-gray-0 hover:bg-[#ffb3c8] group-hover/all:animate-dropdownIcon'>
           <Icons.Heart className={`group-hover/heart:[&_path]:stroke-white `} />
         </div>
-        <div className='w-10 h-10 group/eye rounded-full flex items-center justify-center bg-gray-0 hover:bg-green group-hover/all:animate-dropdownIcon'>
+        <div className='w-10 h-10 group/eye rounded-full flex items-center justify-center bg-gray-0 hover:bg-green  group-hover/all:animate-dropdownIcon '>
           <Icons.Eye className={`group-hover/eye:[&_path]:stroke-white`} />
         </div>
       </div>
