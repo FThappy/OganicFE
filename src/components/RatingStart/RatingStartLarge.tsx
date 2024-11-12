@@ -5,14 +5,14 @@ type Props = {
   rate: number;
 };
 
-const RatingStart = (props: Props) => {
+const RatingStartLarge = (props: Props) => {
   const { rate } = props;
   return (
     <div className='flex'>
       {[...Array(5)].map((_, index) => {
         const currentRating = index + 1;
         return (
-          <Icons.Start
+          <Icons.StarLagre
             key={index}
             className={`${currentRating <= Math.round(rate) ? '[&_path]:fill-warning' : '[&_path]:fill-gray-2'} `}
           />
@@ -22,4 +22,4 @@ const RatingStart = (props: Props) => {
   );
 };
 
-export default RatingStart;
+export default RatingStartLarge;

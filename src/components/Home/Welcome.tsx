@@ -12,7 +12,7 @@ const Welcome = () => {
   const t = useTranslations('HomePage');
 
   return (
-    <section className='relative w-screen h-[640px] items-center justify-center mb-12'>
+    <section className='relative w-screen h-[640px] mb-12'>
       <Image
         src='/bg1.jpg'
         alt='Background Footer'

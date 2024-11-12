@@ -42,6 +42,10 @@ import PhoneSub from '@/assets/svgIcon/phoneSub.svg';
 import MailSub from '@/assets/svgIcon/mailSub.svg';
 import Carrot from '@/assets/svgIcon/Carrot.svg';
 import Vegetable from '@/assets/svgIcon/Vegetable.svg';
+import Home from '@/assets/svgIcon/Home.svg';
+import Filter from '@/assets/svgIcon/Filter.svg';
+import StarLagre from '@/assets/svgIcon/StarLagre.svg';
+
 const Icons = {
   IconHeaderRight,
   MapPin,
@@ -86,7 +90,10 @@ const Icons = {
   PhoneSub,
   MailSub,
   Carrot,
-  Vegetable
+  Vegetable,
+  Home,
+  Filter,
+  StarLagre
 };
 
 export default Icons;
