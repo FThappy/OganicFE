@@ -24,6 +24,7 @@ const RangeInput = (props: Props) => {
           onValueChange={(value: number[]) => setValueLeft(value[0])}
           onValueCommit={(value: number[]) => setMinValue(value[0])}
           step={1}
+          className='absolute top-0 z-[60]'
         />
         <SliderRight
           aria-label='Range Right'
@@ -34,6 +35,7 @@ const RangeInput = (props: Props) => {
           onValueChange={(value: number[]) => setValueRight(value[0])}
           onValueCommit={(value: number[]) => setMaxValue(value[0])}
           step={1}
+          className='absolute top-0'
         />
       </div>
       <p className='text-gray-7 font-normal text-[14px]'>

@@ -31,7 +31,7 @@ const SliderLeft = React.forwardRef<
     className={cn('relative flex w-full touch-none select-none items-center', className)}
     {...props}
   >
-    <SliderPrimitive.Track className='relative h-1.5 w-full grow overflow-hidden rounded-full rounded-r-none bg-green'>
+    <SliderPrimitive.Track className='relative h-1.5 w-full grow overflow-hidden rounded-full bg-transparent'>
       <SliderPrimitive.Range className='absolute h-full bg-gray-1' />
     </SliderPrimitive.Track>
     <SliderPrimitive.Thumb className='block h-[18px] w-[18px] rounded-full border-2 border-green bg-white shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50' />
@@ -47,7 +47,7 @@ const SliderRight = React.forwardRef<
     className={cn('relative flex w-full touch-none select-none items-center', className)}
     {...props}
   >
-    <SliderPrimitive.Track className='relative h-1.5 w-full grow overflow-hidden rounded-full rounded-l-none bg-gray-1'>
+    <SliderPrimitive.Track className='relative h-1.5 w-full grow overflow-hidden rounded-full bg-gray-1'>
       <SliderPrimitive.Range className='absolute h-full bg-green' />
     </SliderPrimitive.Track>
     <SliderPrimitive.Thumb className='block h-[18px] w-[18px] rounded-full border-2 border-green bg-white shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50' />
