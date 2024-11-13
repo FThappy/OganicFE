@@ -22,7 +22,7 @@ const Slider = React.forwardRef<
 ));
 Slider.displayName = SliderPrimitive.Root.displayName;
 
-const SliderLeft = React.forwardRef<
+const SliderCustom = React.forwardRef<
   React.ElementRef<typeof SliderPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
 >(({ className, ...props }, ref) => (
@@ -31,13 +31,14 @@ const SliderLeft = React.forwardRef<
     className={cn('relative flex w-full touch-none select-none items-center', className)}
     {...props}
   >
-    <SliderPrimitive.Track className='relative h-1.5 w-full grow overflow-hidden rounded-full bg-transparent'>
-      <SliderPrimitive.Range className='absolute h-full bg-gray-1' />
+    <SliderPrimitive.Track className='relative h-1.5 w-full grow overflow-hidden rounded-full bg-gray-1'>
+      <SliderPrimitive.Range className='absolute h-full bg-green' />
     </SliderPrimitive.Track>
+    <SliderPrimitive.Thumb className='block h-[18px] w-[18px] rounded-full border-2 border-green bg-white shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50' />
     <SliderPrimitive.Thumb className='block h-[18px] w-[18px] rounded-full border-2 border-green bg-white shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50' />
   </SliderPrimitive.Root>
 ));
-SliderLeft.displayName = SliderPrimitive.Root.displayName;
+SliderCustom.displayName = SliderPrimitive.Root.displayName;
 const SliderRight = React.forwardRef<
   React.ElementRef<typeof SliderPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
@@ -55,4 +56,4 @@ const SliderRight = React.forwardRef<
 ));
 SliderRight.displayName = SliderPrimitive.Root.displayName;
 
-export { Slider, SliderRight, SliderLeft };
+export { Slider, SliderRight, SliderCustom };

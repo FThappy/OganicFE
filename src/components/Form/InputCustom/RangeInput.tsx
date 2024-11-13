@@ -1,5 +1,5 @@
 'use client';
-import { SliderLeft, SliderRight } from '@/components/ui/slider';
+import { SliderCustom } from '@/components/ui/slider';
 import { formatCurrencyByNation } from '@/utils/formmatMoney';
 import React, { useState } from 'react';
 
@@ -16,26 +16,20 @@ const RangeInput = (props: Props) => {
   return (
     <section className='flex flex-col gap-4'>
       <div className='flex items-center relative'>
-        <SliderLeft
-          aria-label='Range Left'
-          max={maxValue / 2}
-          name='left'
-          defaultValue={[0]}
-          onValueChange={(value: number[]) => setValueLeft(value[0])}
-          onValueCommit={(value: number[]) => setMinValue(value[0])}
-          step={1}
-          className='absolute top-0 z-[60]'
-        />
-        <SliderRight
-          aria-label='Range Right'
+        <SliderCustom
+          aria-label='Range Custom'
           max={maxValue}
-          defaultValue={[maxValue]}
-          min={maxValue / 2}
-          name='right'
-          onValueChange={(value: number[]) => setValueRight(value[0])}
-          onValueCommit={(value: number[]) => setMaxValue(value[0])}
+          name='left'
+          defaultValue={[0, maxValue]}
+          onValueChange={(value: number[]) => {
+            setValueLeft(value[0]);
+            setValueRight(value[1]);
+          }}
+          onValueCommit={(value: number[]) => {
+            setMinValue(value[0]);
+            setMaxValue(value[1]);
+          }}
           step={1}
-          className='absolute top-0'
         />
       </div>
       <p className='text-gray-7 font-normal text-[14px]'>

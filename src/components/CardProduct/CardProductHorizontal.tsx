@@ -18,7 +18,7 @@ const CardProductHorizontal = (props: Props) => {
     <section
       className={`w-full h-[116px] bg-white relative group/all cursor-pointer flex rounded-[8px] border border-gray-1 hover:ring-1 hover:ring-green  hover:shadow-green hover:shadow  ${classNames}`}
     >
-      <div className='w-[102px] h-[102px] relative p-[5px]'>
+      <div className='w-[112px] h-[112px] relative p-[5px]'>
         <Image src={src} alt='product image' fill quality={100} priority sizes='100%' />
       </div>
       <div className='p-4 w-full flex items-center justify-between'>
