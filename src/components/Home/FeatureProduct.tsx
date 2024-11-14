@@ -9,11 +9,11 @@ const FeatureProduct = () => {
   const t = useTranslations('HomePage');
 
   return (
-    <section className='relative w-screen h-[600px] items-center justify-center'>
+    <section className='relative w-screen h-[600px] items-center justify-center z-[90]'>
       <div className='absolute bottom-[1rem] z-[60] left-0'>
         <Icons.Pumkin />
       </div>
-      <section className='container h-full w-full flex flex-col items-center justify-center gap-4'>
+      <section className='container h-full w-full flex flex-col items-center justify-center relative gap-4 z-[1005]'>
         <section className='flex w-full items-center justify-between'>
           <p className='text-gray-9 text-[40px] font-semibold'>{t('featuredProduct')}</p>
           <LinkViewAll href='/' />

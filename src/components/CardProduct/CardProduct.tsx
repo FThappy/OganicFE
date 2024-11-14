@@ -1,8 +1,10 @@
+'use client';
 import React from 'react';
 import Image from 'next/image';
 import { formatCurrencyByNation } from '@/utils/formmatMoney';
 import RatingStart from '../RatingStart/RatingStart';
 import Icons from '@/constants/svgIcon';
+import { Link, useRouter } from '@/i18n/routing';
 
 type Props = {
   classNames?: string;
@@ -14,6 +16,7 @@ type Props = {
 
 const CardProduct = (props: Props) => {
   const { classNames, src, title, price, rate } = props;
+  const router = useRouter();
   return (
     <section
       className={`w-full h-[407px] relative group/all cursor-pointer flex flex-col rounded-[8px] border border-gray-1 hover:ring-1 hover:ring-green  hover:shadow-green hover:shadow  ${classNames}`}
@@ -39,7 +42,9 @@ const CardProduct = (props: Props) => {
           <Icons.Heart className={`group-hover/heart:[&_path]:stroke-white `} />
         </div>
         <div className='w-10 h-10 group/eye rounded-full flex items-center justify-center bg-gray-0 hover:bg-green  group-hover/all:animate-dropdownIcon '>
-          <Icons.Eye className={`group-hover/eye:[&_path]:stroke-white`} />
+          <Link href={`/shop/${1}`}>
+            <Icons.Eye className={`group-hover/eye:[&_path]:stroke-white`} />
+          </Link>
         </div>
       </div>
     </section>

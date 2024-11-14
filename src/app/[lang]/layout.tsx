@@ -22,9 +22,11 @@ const popin = Poppins({
 });
 export default async function RootLayout({
   children,
+  // modalProduct,
   params
 }: Readonly<{
   children: React.ReactNode;
+  // modalProduct: React.ReactNode;
   params: Promise<{ lang: string }>;
 }>) {
   const locale = (await params).lang;
@@ -34,13 +36,20 @@ export default async function RootLayout({
   const messages = await getMessages();
   return (
     <html lang={locale}>
-      <body className={`antialiased ${popin.className}`}>
+      <body className={`antialiased ${popin.className} relative`}>
         <NextTopLoader showSpinner={false} />
         <NextIntlClientProvider messages={messages}>
           <Header />
-          <main className='mt-[198px]'>{children}</main>
+          <main className=' mt-[198px]'>
+            {children}
+            {/* <div className='relative z-[80]'></div> */}
+            {/* <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-screen h-screen'>
+              {modalProduct}
+            </div> */}
+          </main>
           <Footer />
         </NextIntlClientProvider>
+
         <ToastifyContainer />
       </body>
     </html>
