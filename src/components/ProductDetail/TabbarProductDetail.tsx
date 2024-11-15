@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import DescriptionDetail from './DescriptionDetail';
 import Information from './Information';
+import FeedBackProduct from './FeedBackProduct';
 
 type Props = {};
 
@@ -47,7 +48,7 @@ const TabbarProductDetail = (props: Props) => {
       <div className='mt-6 container w-full'>
         {activeTab === 'description' && <DescriptionDetail />}
         {activeTab === 'infomation' && <Information />}
-        {activeTab === 'feedback' && <p>Customer Feedback</p>}
+        {activeTab === 'feedback' && <FeedBackProduct />}
       </div>
     </section>
   );
