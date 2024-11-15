@@ -1,6 +1,7 @@
 import InputSearch from '@/components/Form/InputCustom/InputSearch';
 import { Button } from '@/components/ui/button';
 import Icons from '@/constants/svgIcon';
+import { Link } from '@/i18n/routing';
 import { formatCurrencyByNation } from '@/utils/formmatMoney';
 import React from 'react';
 import { FaRegHeart } from 'react-icons/fa6';
@@ -12,10 +13,10 @@ const MiddleHeader = (props: Props) => {
   return (
     <section className='bg-white'>
       <section className='flex h-[93px] items-center justify-between container '>
-        <section className='flex gap-2 items-center cursor-pointer'>
+        <Link href={''} className='flex gap-2 items-center cursor-pointer'>
           <Icons.Logo />
           <p className='text-gray-9 font-medium leading-[38px] text-[32px] tracking-[-3%]'>Ecobazar</p>
-        </section>
+        </Link>
         <section className='flex'>
           <InputSearch
             placeHoderSearch='Search'

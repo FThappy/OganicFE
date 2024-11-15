@@ -12,13 +12,20 @@ type Props = {
   title: string;
   price: number;
   rate: number;
+  setActiveProduct?: React.Dispatch<React.SetStateAction<number>>;
+  setOpenQuickView?: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const CardProduct = (props: Props) => {
-  const { classNames, src, title, price, rate } = props;
+  const { classNames, src, title, price, rate, setActiveProduct, setOpenQuickView } = props;
   const router = useRouter();
   return (
     <section
+      onClick={e => {
+        e.preventDefault();
+        e.stopPropagation();
+        router.push(`/shop/1`);
+      }}
       className={`w-full h-[407px] relative group/all cursor-pointer flex flex-col rounded-[8px] border border-gray-1 hover:ring-1 hover:ring-green  hover:shadow-green hover:shadow  ${classNames}`}
     >
       <div className='w-full h-full relative p-[5px]'>
@@ -41,10 +48,17 @@ const CardProduct = (props: Props) => {
         <div className='w-10 h-10 group/heart rounded-full flex items-center justify-center bg-gray-0 hover:bg-[#ffb3c8] group-hover/all:animate-dropdownIcon'>
           <Icons.Heart className={`group-hover/heart:[&_path]:stroke-white `} />
         </div>
-        <div className='w-10 h-10 group/eye rounded-full flex items-center justify-center bg-gray-0 hover:bg-green  group-hover/all:animate-dropdownIcon '>
-          <Link href={`/shop/${1}`}>
-            <Icons.Eye className={`group-hover/eye:[&_path]:stroke-white`} />
-          </Link>
+        <div
+          onClick={e => {
+            e.preventDefault();
+            e.stopPropagation();
+            e.currentTarget;
+            setActiveProduct && setActiveProduct(1);
+            setOpenQuickView && setOpenQuickView(true);
+          }}
+          className='w-10 h-10 group/eye rounded-full flex items-center justify-center bg-gray-0 hover:bg-green  group-hover/all:animate-dropdownIcon '
+        >
+          <Icons.Eye className={`group-hover/eye:[&_path]:stroke-white`} />
         </div>
       </div>
     </section>

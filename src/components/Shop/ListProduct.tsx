@@ -4,9 +4,13 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { productDTO1 } from '@/lib/content';
 import CardProduct from '../CardProduct/CardProduct';
 import PaginationPage from '../Pagination/Pagination';
-type Props = {};
+type Props = {
+  setActiveProduct: React.Dispatch<React.SetStateAction<number>>;
+  setOpenQuickView: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
 const ListProduct = (props: Props) => {
+  const { setActiveProduct, setOpenQuickView } = props;
   const [inPage, setInPage] = useState<number>(2);
 
   const handlePageChange = (page: number) => {
@@ -41,13 +45,37 @@ const ListProduct = (props: Props) => {
       </div>
       <section className='grid grid-cols-3 gap-6 mt-6 mb-6'>
         {productDTO1.map((item, index) => (
-          <CardProduct key={index} src={item.src} title={item.title} price={item.price} rate={item.rate} />
+          <CardProduct
+            key={index}
+            src={item.src}
+            title={item.title}
+            price={item.price}
+            rate={item.rate}
+            setActiveProduct={setActiveProduct}
+            setOpenQuickView={setOpenQuickView}
+          />
         ))}
         {productDTO1.map((item, index) => (
-          <CardProduct key={index} src={item.src} title={item.title} price={item.price} rate={item.rate} />
+          <CardProduct
+            key={index}
+            src={item.src}
+            title={item.title}
+            price={item.price}
+            rate={item.rate}
+            setActiveProduct={setActiveProduct}
+            setOpenQuickView={setOpenQuickView}
+          />
         ))}
         {productDTO1.map((item, index) => (
-          <CardProduct key={index} src={item.src} title={item.title} price={item.price} rate={item.rate} />
+          <CardProduct
+            key={index}
+            src={item.src}
+            title={item.title}
+            price={item.price}
+            rate={item.rate}
+            setActiveProduct={setActiveProduct}
+            setOpenQuickView={setOpenQuickView}
+          />
         ))}
       </section>
       <section className='w-full flex items-center justify-center'>
