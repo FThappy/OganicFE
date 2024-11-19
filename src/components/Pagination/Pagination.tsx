@@ -5,10 +5,7 @@ import {
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
-  PaginationLink,
-  PaginationNext,
   PaginationNextCustom,
-  PaginationPrevious,
   PaginationPreviousCustom
 } from '@/components/ui/pagination';
 
@@ -27,7 +24,9 @@ const PaginationPage = (props: Props) => {
           <PaginationPreviousCustom
             onClick={e => {
               e.preventDefault();
-              inPage > 1 && handleChangePage(inPage - 1);
+              if (inPage > 1) {
+                handleChangePage(inPage - 1);
+              }
             }}
             className={`rounded-full  p-2 ${inPage === 1 ? 'bg-gray-0 text-gray-3' : 'bg-white border border-gray-2 cursor-pointer text-gray-9 hover:bg-slate-100'}`}
           />
@@ -48,7 +47,9 @@ const PaginationPage = (props: Props) => {
           <PaginationNextCustom
             onClick={e => {
               e.preventDefault();
-              inPage < totalPage && handleChangePage(inPage + 1);
+              if (inPage < totalPage) {
+                handleChangePage(inPage + 1);
+              }
             }}
             className={`rounded-full  p-2 ${inPage === totalPage ? 'bg-gray-0 text-gray-3' : 'bg-white border border-gray-2 cursor-pointer text-gray-9 hover:bg-slate-100'}`}
           />
@@ -62,7 +63,9 @@ const PaginationPage = (props: Props) => {
         <PaginationPreviousCustom
           onClick={e => {
             e.preventDefault();
-            inPage > 1 && handleChangePage(inPage - 1);
+            if (inPage > 1) {
+              handleChangePage(inPage - 1);
+            }
           }}
           className={`rounded-full  p-2 ${inPage === 1 ? 'bg-gray-0 text-gray-3' : 'bg-white border border-gray-2 cursor-pointer text-gray-9 hover:bg-slate-100'}`}
         />
@@ -213,7 +216,9 @@ const PaginationPage = (props: Props) => {
         <PaginationNextCustom
           onClick={e => {
             e.preventDefault();
-            inPage < totalPage && handleChangePage(inPage + 1);
+            if (inPage < totalPage) {
+              handleChangePage(inPage + 1);
+            }
           }}
           className={`rounded-full  p-2 ${inPage === totalPage ? 'bg-gray-0 text-gray-3' : 'bg-white border border-gray-2 cursor-pointer text-gray-9 hover:bg-slate-100'}`}
         />

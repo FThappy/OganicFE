@@ -5,11 +5,12 @@ import InputRating from '../Form/InputCustom/InputRating';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-type Props = {};
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Button } from '../ui/button';
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import { Textarea } from '../ui/textarea';
+import Emoji from './Emoji';
+import { PiPaperPlaneRightFill } from 'react-icons/pi';
 
+type Props = {};
 const formSchema = z.object({
   comment: z
     .string()
@@ -36,12 +37,20 @@ const InputComments = (props: Props) => {
       rate: 5
     }
   });
+  const { watch, setValue } = form;
+  const handleChangeComment = (value: string) => {
+    setValue('comment', watch('comment') + value);
+  };
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
   }
+
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='border border-slate-300 rounded-[8px] p-2 h-36 relative'>
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className='border border-slate-300 rounded-[8px] p-2  pb-4 h-36 relative'
+      >
         <FormField
           control={form.control}
           name='rate'
@@ -75,7 +84,12 @@ const InputComments = (props: Props) => {
             </FormItem>
           )}
         />
-        <Button type='submit'>Submit</Button>
+        <div className='flex justify-end items-center gap-4'>
+          <Emoji handleChangeComment={handleChangeComment} />
+          <button type='submit'>
+            <PiPaperPlaneRightFill color={watch('comment') ? '#1E90FF' : '#E8E5ED'} size={24} />
+          </button>
+        </div>
       </form>
     </Form>
   );
