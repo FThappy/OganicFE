@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { formatCurrencyByNation } from '@/utils/formmatMoney';
 import RatingStart from '../RatingStart/RatingStart';
 import Icons from '@/constants/svgIcon';
-import { Link, useRouter } from '@/i18n/routing';
+import { useRouter, Link } from '@/i18n/routing';
 
 type Props = {
   classNames?: string;
@@ -20,12 +20,8 @@ const CardProduct = (props: Props) => {
   const { classNames, src, title, price, rate, setActiveProduct, setOpenQuickView } = props;
   const router = useRouter();
   return (
-    <section
-      onClick={e => {
-        e.preventDefault();
-        e.stopPropagation();
-        router.push(`/shop/1`);
-      }}
+    <Link
+      href={`/shop/1`}
       className={`w-full h-[407px] relative group/all cursor-pointer flex flex-col rounded-[8px] border border-gray-1 hover:ring-1 hover:ring-green  hover:shadow-green hover:shadow  ${classNames}`}
     >
       <div className='w-full h-full relative p-[5px]'>
@@ -61,7 +57,7 @@ const CardProduct = (props: Props) => {
           <Icons.Eye className={`group-hover/eye:[&_path]:stroke-white`} />
         </div>
       </div>
-    </section>
+    </Link>
   );
 };
 

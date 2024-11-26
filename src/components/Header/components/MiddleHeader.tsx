@@ -1,3 +1,4 @@
+import CartSideBar from '@/components/Cart/CartSideBar';
 import InputSearch from '@/components/Form/InputCustom/InputSearch';
 import { Button } from '@/components/ui/button';
 import Icons from '@/constants/svgIcon';
@@ -29,16 +30,7 @@ const MiddleHeader = (props: Props) => {
         <section className='flex gap-4 items-center'>
           <FaRegHeart size={32} color='#1A1A1A' className='cursor-pointer' />
           <span className='text-gray-2'>|</span>
-          <div className='relative'>
-            <HiOutlineShoppingBag size={32} color='#1A1A1A' className='cursor-pointer' />
-            <div className='absolute top-0 right-[-2px] bg-green-hard rounded-full h-[18px] w-[18px] text-white text-[10px] flex items-center justify-center'>
-              2
-            </div>
-          </div>
-          <div className='flex flex-col '>
-            <p className='font-normal text-[11px]'>Shopping cart:</p>
-            <p className='font-medium text-[14px]'>{formatCurrencyByNation(57, 'en-US', 'USD', 'symbol', 2)}</p>
-          </div>
+          <CartSideBar />
         </section>
       </section>
     </section>

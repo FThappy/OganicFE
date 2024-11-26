@@ -4,6 +4,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
+  reactStrictMode: false,
   /* config options here */
   webpack(config) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

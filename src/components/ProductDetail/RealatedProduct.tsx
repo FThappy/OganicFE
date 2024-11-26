@@ -1,26 +1,22 @@
 'use client';
 import React from 'react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
-import { productDTO1 } from '@/lib/content';
+import { productDTO } from '@/lib/content';
 import CardProduct from '../CardProduct/CardProduct';
 
 type Props = {};
 
 const RealatedProduct = (props: Props) => {
   return (
-    <Carousel className='container mt-4'>
-      <CarouselContent className=''>
-        {productDTO1.map((item, index) => (
-          <CarouselItem key={index} className='basis-1/3 border-none rounded-none'>
-            <div className='p-1'>
-              <CardProduct key={index} src={item.src} title={item.title} price={item.price} rate={item.rate} />
-            </div>
-          </CarouselItem>
+    <section className='container mt-4'>
+      <p className='text-gray-9 text-[32px] font-extrabold text-center my-2'>Related Products</p>
+      <section className='grid grid-cols-4 gap-4 '>
+        {productDTO.map((item, index) => (
+          <div className='p-1' key={index}>
+            <CardProduct src={item.src} title={item.title} price={item.price} rate={item.rate} />
+          </div>
         ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+      </section>
+    </section>
   );
 };
 
