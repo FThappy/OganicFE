@@ -3,10 +3,8 @@ import InputSearch from '@/components/Form/InputCustom/InputSearch';
 import { Button } from '@/components/ui/button';
 import Icons from '@/constants/svgIcon';
 import { Link } from '@/i18n/routing';
-import { formatCurrencyByNation } from '@/utils/formmatMoney';
 import React from 'react';
 import { FaRegHeart } from 'react-icons/fa6';
-import { HiOutlineShoppingBag } from 'react-icons/hi';
 
 type Props = {};
 
@@ -28,7 +26,9 @@ const MiddleHeader = (props: Props) => {
           </Button>
         </section>
         <section className='flex gap-4 items-center'>
-          <FaRegHeart size={32} color='#1A1A1A' className='cursor-pointer' />
+          <Link href='/wishlist'>
+            <FaRegHeart size={32} color='#1A1A1A' className='cursor-pointer' />
+          </Link>
           <span className='text-gray-2'>|</span>
           <CartSideBar />
         </section>

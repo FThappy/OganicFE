@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 import { formatCurrencyByNation } from '@/utils/formmatMoney';
-type Props = {};
 import Image from 'next/image';
 import InputQuantityProduct from '../QuantityProduct/InputQuantityProduct';
+import { LinkGlobal } from '../LinkGlobal/LinkGlobal';
+type Props = {};
 
 const CartSideBar = (props: Props) => {
   const [quantity, setQuantity] = useState(1);
@@ -144,7 +145,32 @@ const CartSideBar = (props: Props) => {
               <InputQuantityProduct handleChange={handleQuantityChange} quantity={quantity} />
             </section>
           </section>
-          <section className='w-[440px] h-[186px] bg-blue-200 fixed bottom-0 '></section>
+          <section className='w-[440px] h-[186px] fixed bottom-[-20px] gap-2 flex flex-col '>
+            <div className='flex justify-between w-full items-center'>
+              <p className='text-[14px] text-gray-9'>{2} Product</p>
+              <p className='text-[14px] text-gray-9 font-medium'>
+                {formatCurrencyByNation(12, 'en-US', 'USD', 'symbol', 2)}
+              </p>
+            </div>
+            <LinkGlobal link={'/'} size='small' className='group z-50 w-full' animation='middle' coverage='660%'>
+              <div className='py-[2.5px] flex items-center group-hover:animate-white-to-green animate-green-to-white gap-2'>
+                <p className='font-semibold group-hover:animate-white-to-green animate-green-to-white z-50'>Checkout</p>
+              </div>
+            </LinkGlobal>
+            <LinkGlobal
+              link={'/'}
+              size='small'
+              className='group z-50 w-full'
+              animation='middle'
+              coverage='660%'
+              backgroundColor='#eff7ef'
+              textColor='#00B207'
+            >
+              <div className='py-[2.5px] flex items-center  gap-2'>
+                <p className='font-semibold text-green z-50'>Go To Cart</p>
+              </div>
+            </LinkGlobal>
+          </section>
         </section>
       </SheetContent>
     </Sheet>
