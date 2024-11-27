@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './LinkGlobal.module.css';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 
 interface LinkBtnProps {
   link: string;

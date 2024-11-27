@@ -85,7 +85,7 @@ const CustomTable = <TData, TValue>(props: CustomTableProps<TData, TValue>) => {
   return (
     <div className='w-full overflow-x-auto'>
       <Table wrapperClassName={cn('border rounded-lg max-h-[70vh]', wrapperClassName)}>
-        <TableHeader className={cn('sticky top-0 h-16 z-10', tableHeaderClass)}>
+        <TableHeader className={cn('sticky top-0 h-16  bg-white z-[800]', tableHeaderClass)}>
           {table.getHeaderGroups().map(headerGroup => (
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map(header => {

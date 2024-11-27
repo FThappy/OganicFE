@@ -238,3 +238,9 @@
   height: var(--coverage, 380%);
   color: white;
 }
+.btn--disable {
+  background-color: #f2f2f2;
+  color: #b3b3b3;
+  border: 2px solid #f2f2f2;
+  cursor: not-allowed;
+}

@@ -6,15 +6,17 @@ import { formatCurrencyByNation } from '@/utils/formmatMoney';
 import Image from 'next/image';
 import InputQuantityProduct from '../QuantityProduct/InputQuantityProduct';
 import { LinkGlobal } from '../LinkGlobal/LinkGlobal';
+import { URL_PATHS } from '@/constants/url-path';
 type Props = {};
 
 const CartSideBar = (props: Props) => {
+  const [openSheet, setOpenSheet] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const handleQuantityChange = (value: number) => {
     setQuantity(value);
   };
   return (
-    <Sheet>
+    <Sheet open={openSheet} onOpenChange={setOpenSheet}>
       <SheetTrigger className='flex gap-4'>
         <div className='relative'>
           <HiOutlineShoppingBag size={32} color='#1A1A1A' className='cursor-pointer' />
@@ -152,24 +154,45 @@ const CartSideBar = (props: Props) => {
                 {formatCurrencyByNation(12, 'en-US', 'USD', 'symbol', 2)}
               </p>
             </div>
-            <LinkGlobal link={'/'} size='small' className='group z-50 w-full' animation='middle' coverage='660%'>
-              <div className='py-[2.5px] flex items-center group-hover:animate-white-to-green animate-green-to-white gap-2'>
-                <p className='font-semibold group-hover:animate-white-to-green animate-green-to-white z-50'>Checkout</p>
-              </div>
-            </LinkGlobal>
-            <LinkGlobal
-              link={'/'}
-              size='small'
-              className='group z-50 w-full'
-              animation='middle'
-              coverage='660%'
-              backgroundColor='#eff7ef'
-              textColor='#00B207'
+            <div
+              onClick={e => {
+                setOpenSheet(false);
+              }}
             >
-              <div className='py-[2.5px] flex items-center  gap-2'>
-                <p className='font-semibold text-green z-50'>Go To Cart</p>
-              </div>
-            </LinkGlobal>
+              <LinkGlobal
+                link={URL_PATHS.checkout}
+                size='small'
+                className='group z-50 w-full'
+                animation='middle'
+                coverage='660%'
+              >
+                <div className='py-[2.5px] flex items-center group-hover:animate-white-to-green animate-green-to-white gap-2'>
+                  <p className='font-semibold group-hover:animate-white-to-green animate-green-to-white z-50'>
+                    Checkout
+                  </p>
+                </div>
+              </LinkGlobal>
+            </div>
+
+            <div
+              onClick={e => {
+                setOpenSheet(false);
+              }}
+            >
+              <LinkGlobal
+                link={'/shopping-cart'}
+                size='small'
+                className='group z-50 w-full'
+                animation='middle'
+                coverage='660%'
+                backgroundColor='#eff7ef'
+                textColor='#00B207'
+              >
+                <div className='py-[2.5px] flex items-center  gap-2'>
+                  <p className='font-semibold text-green z-50'>Go To Cart</p>
+                </div>
+              </LinkGlobal>
+            </div>
           </section>
         </section>
       </SheetContent>

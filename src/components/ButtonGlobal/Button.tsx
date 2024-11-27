@@ -58,7 +58,14 @@ export const ButtonGlobal = ({
 
   return (
     <button
-      className={[styles['btn'], styles[`btn--${size}`], mode, animationClass, className].join(' ')}
+      className={[
+        styles['btn'],
+        styles[`btn--${size}`],
+        mode,
+        !disabled && animationClass,
+        disabled && styles['btn--disable'],
+        className
+      ].join(' ')}
       onClick={handleClick}
       style={
         {

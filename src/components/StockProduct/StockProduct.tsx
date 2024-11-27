@@ -13,7 +13,7 @@ const StockProduct = (props: Props) => {
     case 'sale':
       return (
         <div
-          className={`gap-4 flex items-center justify-center px-2 py-1 rounded-[4px] font-normal text-[14px] text-white bg-danger ${classNames}`}
+          className={`gap-4 inline-block text-center px-2 py-1 rounded-[4px] font-normal text-[14px] text-white bg-danger ${classNames}`}
         >
           Sale
         </div>
@@ -21,7 +21,7 @@ const StockProduct = (props: Props) => {
     case 'new':
       return (
         <div
-          className={`gap-4 flex items-center justify-center px-2 py-1 rounded-[4px] font-normal text-[14px] text-white bg-warning ${classNames}`}
+          className={`gap-4 inline-block text-center px-2 py-1 rounded-[4px] font-normal text-[14px] text-white bg-warning ${classNames}`}
         >
           New
         </div>
@@ -29,7 +29,7 @@ const StockProduct = (props: Props) => {
     case 'bestSale':
       return (
         <div
-          className={`gap-4 flex items-center justify-center px-2 py-1 rounded-[4px] font-normal text-[14px] text-white bg-[#2388FF] ${classNames}`}
+          className={`gap-4 inline-block text-center px-2 py-1 rounded-[4px] font-normal text-[14px] text-white bg-[#2388FF] ${classNames}`}
         >
           Best Sale
         </div>
@@ -37,7 +37,7 @@ const StockProduct = (props: Props) => {
     case 'outStock':
       return (
         <div
-          className={`gap-4 flex items-center justify-center px-2 py-1 rounded-[4px] font-normal text-[14px] text-white bg-gray-9 ${classNames}`}
+          className={`gap-4 inline-block text-center px-2 py-1 rounded-[4px] font-normal text-[14px] text-danger bg-[#EA4B48]/10 ${classNames}`}
         >
           Out of Stock
         </div>
@@ -45,7 +45,7 @@ const StockProduct = (props: Props) => {
     case 'off':
       return (
         <div
-          className={`gap-4 flex items-center justify-center px-2 py-1 font-semibold text-[14px] text-danger  bg-[#EA4B48]/10 ${classNames}`}
+          className={`gap-4 inline-block text-center px-2 py-1 font-semibold text-[14px] text-danger  bg-[#EA4B48]/10 ${classNames}`}
         >
           {discount}% Off
         </div>
@@ -53,7 +53,7 @@ const StockProduct = (props: Props) => {
     default:
       return (
         <div
-          className={`gap-4 flex items-center justify-center px-2 py-1 rounded-[4px] font-semibold text-[14px] text-green-hard bg-[#20B526]/20 ${classNames}`}
+          className={`gap-4 inline-block text-center px-2 py-1 rounded-[4px] font-semibold text-[14px] text-green-hard bg-[#20B526]/20 ${classNames}`}
         >
           In Stock
         </div>

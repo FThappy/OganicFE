@@ -14,7 +14,9 @@ import { usePathname } from '@/i18n/routing';
 import { useSearchParams } from 'next/navigation';
 const URL_NAME = {
   shop: 'Shop',
-  vegetable: 'Vegetable'
+  vegetable: 'Vegetable',
+  wishlist: 'Wishlist',
+  'shopping-cart': 'Shopping Cart'
 } as const;
 type URLNameKey = keyof typeof URL_NAME;
 

@@ -4,5 +4,6 @@ export const URL_PATHS = {
   faq: '/faq',
   blog: '/blog',
   about: '/about',
-  contact: '/contact'
+  contact: '/contact',
+  checkout: '/shopping-cart/checkout'
 };
