@@ -3,7 +3,7 @@ export const URL_PATHS = {
   shop: '/shop',
   faq: '/faq',
   blog: '/blog',
-  about: '/about',
+  about: '/about-us',
   contact: '/contact',
   checkout: '/shopping-cart/checkout'
 };

@@ -16,7 +16,9 @@ const URL_NAME = {
   shop: 'Shop',
   vegetable: 'Vegetable',
   wishlist: 'Wishlist',
-  'shopping-cart': 'Shopping Cart'
+  'shopping-cart': 'Shopping Cart',
+  checkout: 'Checkout',
+  'about-us': 'About Us'
 } as const;
 type URLNameKey = keyof typeof URL_NAME;
 
@@ -48,12 +50,12 @@ const BreadCrumb = () => {
           {pathname
             .split('/')
             .slice(1)
-            .map((item, index) => (
+            .map((item, index, arr) => (
               <React.Fragment key={index}>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                   <BreadcrumbLink className='text-[16px] font-normal hover:text-green text-gray-4' asChild>
-                    <Link href={`/${item}`}>{URL_NAME[item as URLNameKey]}</Link>
+                    <Link href={`/${arr.slice(0, index + 1).join('/')}`}>{URL_NAME[item as URLNameKey]}</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 {item === 'shop' &&
@@ -72,6 +74,16 @@ const BreadCrumb = () => {
                   )}
               </React.Fragment>
             ))}
+          {!pathname
+            .split('/')
+            .slice(1)
+            .some(item => URL_NAME[item as URLNameKey]) && (
+            <BreadcrumbItem>
+              <BreadcrumbLink className='text-[16px] font-normal text-green hover:text-green ' asChild>
+                <p>404 Error Page</p>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          )}
         </BreadcrumbList>
       </Breadcrumb>
     </section>

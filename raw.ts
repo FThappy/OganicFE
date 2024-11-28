@@ -302,3 +302,45 @@
 // }) as <DataType extends Record<string, unknown>>(
 //   props: PropsMulti<DataType & z.infer<typeof formSchema>>
 // ) => JSX.Element;
+{
+  /* <div className=' flex flex-col w-full gap-3'>
+            <Label className='text-sm '>
+              Phone <span className='text-red-500'>*</span>
+            </Label>
+            <div className='w-full flex items-center'>
+              <div className='box-border p-2   border border-r-0 rounded-l-[8px] h-[52px]'>
+                {watch('country') ? (
+                  <div className='flex items-center h-full justify-center gap-2'>
+                    <img
+                      src={`https://flagcdn.com/w40/${watch('country').toLowerCase()}.png`}
+                      className='max-w-10 h-4'
+                    />
+                    ({`${phoneCodeCountry.find(val => val.code === watch('country'))?.dial_code}`})
+                  </div>
+                ) : (
+                  <div className='flex items-center h-full justify-center gap-2'>
+                    <img src={`https://flagcdn.com/w40/un.png`} loading='lazy' />
+                  </div>
+                )}
+              </div>
+              <FormField
+                control={form.control}
+                name='phone'
+                render={({ field }) => (
+                  <FormItem className='w-full'>
+                    <FormControl>
+                      <InputString
+                        placeholder='Your Phone'
+                        max={250}
+                        error={form.formState.errors.phone}
+                        field={field}
+                        classNames='rounded-[0px] rounded-r-[8px] '
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+          </div> */
+}

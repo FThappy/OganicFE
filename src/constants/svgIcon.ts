@@ -47,6 +47,7 @@ import Filter from '@/assets/svgIcon/Filter.svg';
 import StarLagre from '@/assets/svgIcon/StarLagre.svg';
 import Discount from '@/assets/svgIcon/price-tag1.svg';
 import Leaf from '@/assets/svgIcon/leaf1.svg';
+import NotFound from '@/assets/svgIcon/404.svg';
 const Icons = {
   IconHeaderRight,
   MapPin,
@@ -96,7 +97,8 @@ const Icons = {
   Filter,
   StarLagre,
   Discount,
-  Leaf
+  Leaf,
+  NotFound
 };
 
 export default Icons;

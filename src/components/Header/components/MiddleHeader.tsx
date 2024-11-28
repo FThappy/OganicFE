@@ -26,7 +26,7 @@ const MiddleHeader = (props: Props) => {
           </Button>
         </section>
         <section className='flex gap-4 items-center'>
-          <Link href='/wishlist'>
+          <Link href='/wishlist' aria-label='Go to Wishlist'>
             <FaRegHeart size={32} color='#1A1A1A' className='cursor-pointer' />
           </Link>
           <span className='text-gray-2'>|</span>

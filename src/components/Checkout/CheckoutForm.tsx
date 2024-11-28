@@ -12,6 +12,7 @@ import { SingleValue } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { phoneCodeCountry } from '@/constants/phoneCodeCountry';
 import { Option } from '@/types/constants';
+import { Textarea } from '../ui/textarea';
 const SelectReact = dynamic(() => import('react-select'), {
   ssr: false,
   loading: () => <div>Loading...</div>
@@ -203,7 +204,7 @@ const CheckoutForm = (props: Props) => {
           control={form.control}
           name='country'
           render={({ field }) => (
-            <FormItem className='z-[10000] col-span-2'>
+            <FormItem className='z-[100] col-span-2'>
               <Label className='text-sm '>
                 Country / Region <span className='text-red-500'>*</span>
               </Label>
@@ -218,9 +219,9 @@ const CheckoutForm = (props: Props) => {
                       ...provided,
                       fontSize: '14px',
                       borderRadius: '8px',
-                      borderColor: form.formState.errors.country ? 'red' : '#687197',
+                      borderColor: form.formState.errors.country ? 'red' : '#e5e7eb',
                       '&:hover': {
-                        borderColor: form.formState.errors.country ? 'red' : '#687197'
+                        borderColor: form.formState.errors.country ? 'red' : '#e5e7eb'
                       },
                       minHeight: '52px',
                       width: '100%',
@@ -295,49 +296,43 @@ const CheckoutForm = (props: Props) => {
               </FormItem>
             )}
           />
-          <div className=' flex flex-col w-full gap-3'>
-            <Label className='text-sm '>
-              Phone <span className='text-red-500'>*</span>
-            </Label>
-            <div className='w-full flex items-center'>
-              <div className='box-border p-2   border border-r-0 rounded-l-[8px] h-[52px]'>
-                {watch('country') ? (
-                  <div className='flex items-center h-full justify-center gap-2'>
-                    <img
-                      src={`https://flagcdn.com/w40/${watch('country').toLowerCase()}.png`}
-                      className='max-w-10 h-4'
-                    />
-                    ({`${phoneCodeCountry.find(val => val.code === watch('country'))?.dial_code}`})
-                  </div>
-                ) : (
-                  <div className='flex items-center h-full justify-center gap-2'>
-                    <img src={`https://flagcdn.com/w40/un.png`} loading='lazy' />
-                  </div>
-                )}
-              </div>
-              <FormField
-                control={form.control}
-                name='phone'
-                render={({ field }) => (
-                  <FormItem className='w-full'>
-                    <FormControl>
-                      <InputString
-                        placeholder='Your Phone'
-                        max={250}
-                        error={form.formState.errors.phone}
-                        field={field}
-                        classNames='rounded-[0px] rounded-r-[8px] '
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-          </div>
+          <FormField
+            control={form.control}
+            name='phone'
+            render={({ field }) => (
+              <FormItem className='w-full'>
+                <Label className='text-sm '>
+                  Phone <span className='text-red-500'>*</span>
+                </Label>
+                <FormControl>
+                  <InputString placeholder='Your Phone' max={250} error={form.formState.errors.phone} field={field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
         </div>
+        <div className='h-1 w-full col-span-3 border-t border-t-gray-200'></div>
         <div className='col-span-3 flex flex-col gap-4'>
           <p className='text-gray-9 text-[24px]'>Additional Info</p>
+          <FormField
+            control={form.control}
+            name='notes'
+            render={({ field }) => (
+              <FormItem className='w-full'>
+                <Label className='text-sm '>Order Notes (Optional)</Label>
+                <FormControl>
+                  <Textarea
+                    placeholder='Notes about your order, e.g. special notes for delivery'
+                    {...field}
+                    maxLength={255}
+                    className={`resize-none	h-[100px] ${form.formState.errors.notes ? 'border border-red-500 focus-visible:outline-none focus-visible:border-red-500' : ''}`}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
         </div>
       </form>
     </Form>

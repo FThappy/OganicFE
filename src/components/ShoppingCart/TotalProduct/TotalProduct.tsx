@@ -1,4 +1,5 @@
 import { LinkGlobal } from '@/components/LinkGlobal/LinkGlobal';
+import { URL_PATHS } from '@/constants/url-path';
 import { formatCurrencyByNation } from '@/utils/formmatMoney';
 import React from 'react';
 
@@ -26,7 +27,13 @@ const TotalProduct = (props: Props) => {
       </div>
       <div className='h-1 w-full border-t border-t-gray-200'></div>
 
-      <LinkGlobal link={'/'} size='small' className='group z-50 w-full' animation='middle' coverage='660%'>
+      <LinkGlobal
+        link={URL_PATHS.checkout}
+        size='small'
+        className='group z-50 w-full'
+        animation='middle'
+        coverage='660%'
+      >
         <div className='py-[2.5px] flex items-center group-hover:animate-white-to-green animate-green-to-white gap-2'>
           <p className='font-semibold group-hover:animate-white-to-green animate-green-to-white z-50'>
             Proceed to checkout
