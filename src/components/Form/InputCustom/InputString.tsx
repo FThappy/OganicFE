@@ -15,7 +15,7 @@ type Props<T extends FieldValues> = {
 const InputString = <T extends FieldValues>({ type, placeholder, max, error, field, classNames }: Props<T>) => {
   return (
     <Input
-      className={`rounded-[8px] px-[14px] py-[10px] h-[52px] bg-white ${error ? 'border border-red-500 focus-visible:outline-none focus-visible:border-red-500' : ''} ${classNames}`}
+      className={`rounded-[8px] px-[14px] py-[10px] h-[52px] bg-white ${error ? 'border border-red-500 focus-visible:outline-none focus-visible:border-red-500 focus-visible:ring-red-500 focus-visible:ring-1 ' : ''} ${classNames}`}
       placeholder={placeholder}
       {...field}
       maxLength={max}

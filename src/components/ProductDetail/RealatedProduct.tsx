@@ -7,8 +7,8 @@ type Props = {};
 
 const RealatedProduct = (props: Props) => {
   return (
-    <section className='container mt-4'>
-      <p className='text-gray-9 text-[32px] font-extrabold text-center my-2'>Related Products</p>
+    <section className='container mt-4 mb-12'>
+      <p className='text-gray-9 text-[32px] font-semibold text-center my-2 '>Related Products</p>
       <section className='grid grid-cols-4 gap-4 '>
         {productDTO.map((item, index) => (
           <div className='p-1' key={index}>

@@ -18,7 +18,12 @@ const URL_NAME = {
   wishlist: 'Wishlist',
   'shopping-cart': 'Shopping Cart',
   checkout: 'Checkout',
-  'about-us': 'About Us'
+  'about-us': 'About Us',
+  contact: 'Contact Us',
+  faq: 'Faqs',
+  account: 'Account',
+  login: 'Login',
+  signup: 'Create Account'
 } as const;
 type URLNameKey = keyof typeof URL_NAME;
 
@@ -77,7 +82,7 @@ const BreadCrumb = () => {
           {!pathname
             .split('/')
             .slice(1)
-            .some(item => URL_NAME[item as URLNameKey]) && (
+            .every(item => URL_NAME[item as URLNameKey]) && (
             <BreadcrumbItem>
               <BreadcrumbLink className='text-[16px] font-normal text-green hover:text-green ' asChild>
                 <p>404 Error Page</p>

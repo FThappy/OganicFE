@@ -48,6 +48,11 @@ import StarLagre from '@/assets/svgIcon/StarLagre.svg';
 import Discount from '@/assets/svgIcon/price-tag1.svg';
 import Leaf from '@/assets/svgIcon/leaf1.svg';
 import NotFound from '@/assets/svgIcon/404.svg';
+import SuperStar from '@/assets/svgIcon/superstar.svg';
+import Check from '@/assets/svgIcon/check.svg';
+import LocalContact from '@/assets/svgIcon/LocalContact.svg';
+import PhoneContact from '@/assets/svgIcon/PhoneContact.svg';
+import MailContact from '@/assets/svgIcon/MailContact.svg';
 const Icons = {
   IconHeaderRight,
   MapPin,
@@ -98,7 +103,12 @@ const Icons = {
   StarLagre,
   Discount,
   Leaf,
-  NotFound
+  NotFound,
+  SuperStar,
+  Check,
+  LocalContact,
+  PhoneContact,
+  MailContact
 };
 
 export default Icons;

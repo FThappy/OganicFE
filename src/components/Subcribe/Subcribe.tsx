@@ -4,7 +4,7 @@ import FormSubscribe from '../FormSubscribe/FormSubscribe';
 
 const Subcribe = () => {
   return (
-    <div className='h-[162px] w-screen bg-[#F7F7F7]  flex items-center mt-12'>
+    <div className='h-[162px] w-screen bg-[#F7F7F7]  flex items-center '>
       <div className='container flex items-center justify-between gap-[72px]'>
         <div className='flex flex-col  gap-1 min-w-[448px] w-[448px]'>
           <p className='text-gray-9 font-semibold text-[24px]'>Subcribe our Newsletter</p>

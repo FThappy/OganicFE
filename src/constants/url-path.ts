@@ -5,5 +5,7 @@ export const URL_PATHS = {
   blog: '/blog',
   about: '/about-us',
   contact: '/contact',
-  checkout: '/shopping-cart/checkout'
+  checkout: '/shopping-cart/checkout',
+  login: '/account/login',
+  signup: '/account/signup'
 };

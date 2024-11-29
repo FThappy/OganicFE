@@ -1,6 +1,7 @@
 'use client';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Icons from '@/constants/svgIcon';
+import { URL_PATHS } from '@/constants/url-path';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
 import React from 'react';
@@ -49,9 +50,9 @@ const DescriptionHeader = () => {
           </Select>
           <span className='text-[rgba(255, 255, 255, 0.9)]'>|</span>
           <div className='flex gap-2'>
-            <Link href='/sign-in'>Sign In</Link>
+            <Link href={URL_PATHS.login}>Sign In</Link>
             <span>/</span>
-            <Link href='/sign-up'>Sign Up</Link>
+            <Link href={URL_PATHS.signup}>Sign Up</Link>
           </div>
         </div>
       </div>
