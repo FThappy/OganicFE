@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { formatCurrencyByNation } from '@/utils/formmatMoney';
 import { RadioGroup, RadioGroupCustom, RadioGroupItem } from '../ui/radio-group';
 import { Label } from '../ui/label';
-import { LinkGlobal } from '../LinkGlobal/LinkGlobal';
+import { ButtonGlobal } from '../ButtonGlobal/Button';
 
 type Props = {};
 
@@ -109,12 +109,13 @@ const SubTotal = (props: Props) => {
           </Label>
         </div>
       </RadioGroup>
-
-      <LinkGlobal link={'/'} size='small' className='group z-50 w-full' animation='middle' coverage='660%'>
-        <div className='py-[2.5px] flex items-center group-hover:animate-white-to-green animate-green-to-white gap-2'>
-          <p className='font-semibold group-hover:animate-white-to-green animate-green-to-white z-50'>Place Order</p>
-        </div>
-      </LinkGlobal>
+      <div className='h-[52px] w-full'>
+        <ButtonGlobal type='submit' size='small' className='group z-50 w-full ' animation='middle' coverage='660%'>
+          <div className='py-[2.5px] flex items-center group-hover:animate-white-to-green animate-green-to-white gap-2'>
+            <p className='font-semibold group-hover:animate-white-to-green animate-green-to-white z-50'>Place Order</p>
+          </div>
+        </ButtonGlobal>
+      </div>
     </section>
   );
 };
