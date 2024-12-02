@@ -53,6 +53,8 @@ import Check from '@/assets/svgIcon/check.svg';
 import LocalContact from '@/assets/svgIcon/LocalContact.svg';
 import PhoneContact from '@/assets/svgIcon/PhoneContact.svg';
 import MailContact from '@/assets/svgIcon/MailContact.svg';
+import GoogleIcon from '@/assets/svgIcon/google-logo.svg';
+import FacebookIcon from '@/assets/svgIcon/facebook-logo.svg';
 const Icons = {
   IconHeaderRight,
   MapPin,
@@ -108,7 +110,9 @@ const Icons = {
   Check,
   LocalContact,
   PhoneContact,
-  MailContact
+  MailContact,
+  GoogleIcon,
+  FacebookIcon
 };
 
 export default Icons;

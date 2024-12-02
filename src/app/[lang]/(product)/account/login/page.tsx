@@ -11,6 +11,8 @@ import InputString from '@/components/Form/InputCustom/InputString';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Link } from '@/i18n/routing';
+import { URL_PATHS } from '@/constants/url-path';
+import Icons from '@/constants/svgIcon';
 
 type Props = {};
 const formSchema = z.object({
@@ -128,6 +130,37 @@ const LoginPage = (props: Props) => {
               </p>
             </div>
           </ButtonGlobal>
+          <div className='w-full relative'>
+            <div className=' h-1 w-full border-t border-t-gray-400 z-[50]'></div>
+            <p className='absolute top-[25%] left-1/2 transform -translate-y-1/2  text-[18px] text-gray-6  bg-white z-[50] '>
+              Or
+            </p>
+          </div>
+          <div className='w-full gap-2 flex items-center'>
+            <button
+              type='button'
+              className='w-full group rounded-[8px] border border-gray-2 h-[52px] flex justify-center items-center hover:bg-slate-100 gap-2'
+            >
+              <Icons.GoogleIcon />
+              <p className='font-semibold group-hover:text-green'>Google</p>
+            </button>
+            <button
+              type='button'
+              className='w-full group rounded-[8px] border border-gray-2 h-[52px] flex justify-center items-center hover:bg-slate-100 gap-2'
+            >
+              <Icons.FacebookIcon />
+              <p className='font-semibold group-hover:text-[#17A9FD]'>Facebook</p>
+            </button>
+          </div>
+          <p className='text-[14px] text-gray-6 text-center'>
+            Don't have account?
+            <span>
+              {' '}
+              <Link href={URL_PATHS.signup} className='text-gray-9 font-medium text-[14px] hover:text-green'>
+                Register
+              </Link>
+            </span>
+          </p>
         </form>
       </Form>
     </div>
