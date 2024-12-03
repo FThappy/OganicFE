@@ -23,7 +23,11 @@ const URL_NAME = {
   faq: 'Faqs',
   account: 'Account',
   login: 'Login',
-  signup: 'Create Account'
+  signup: 'Create Account',
+  dashboard: 'Dashboard',
+  'order-detail': 'Order Details',
+  'order-history': 'Order History',
+  setting: 'Setting'
 } as const;
 type URLNameKey = keyof typeof URL_NAME;
 
@@ -59,7 +63,10 @@ const BreadCrumb = () => {
               <React.Fragment key={index}>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbLink className='text-[16px] font-normal hover:text-green text-gray-4' asChild>
+                  <BreadcrumbLink
+                    className={`text-[16px] font-normal hover:text-green text-gray-4 ${`/${arr.slice(0, index + 1).join('/')}` === pathname ? 'text-green' : ' '}`}
+                    asChild
+                  >
                     <Link href={`/${arr.slice(0, index + 1).join('/')}`}>{URL_NAME[item as URLNameKey]}</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>

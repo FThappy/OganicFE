@@ -155,7 +155,7 @@ const CartSideBar = (props: Props) => {
               </p>
             </div>
             <div
-              onClick={e => {
+              onClick={() => {
                 setOpenSheet(false);
               }}
             >
@@ -175,7 +175,7 @@ const CartSideBar = (props: Props) => {
             </div>
 
             <div
-              onClick={e => {
+              onClick={() => {
                 setOpenSheet(false);
               }}
             >

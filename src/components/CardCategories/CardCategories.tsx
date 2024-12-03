@@ -1,8 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import { formatCurrencyByNation } from '@/utils/formmatMoney';
-import RatingStart from '../RatingStart/RatingStart';
-import Icons from '@/constants/svgIcon';
 
 type Props = {
   classNames?: string;

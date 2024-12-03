@@ -1,16 +1,20 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { formatCurrencyByNation } from '@/utils/formmatMoney';
-import { RadioGroup, RadioGroupCustom, RadioGroupItem } from '../ui/radio-group';
+import { RadioGroup, RadioGroupCustom } from '../ui/radio-group';
 import { Label } from '../ui/label';
 import { ButtonGlobal } from '../ButtonGlobal/Button';
+import { FieldValues, Path, UseFormReturn } from 'react-hook-form';
+import { FormControl, FormField, FormItem } from '../ui/form';
 
-type Props = {};
+type Props<T extends FieldValues> = {
+  form: UseFormReturn<T>;
+};
 
-const SubTotal = (props: Props) => {
-  const [selectedValue, setSelectedValue] = useState<string>('cashOnDelivery');
-
+const SubTotal = <T extends FieldValues>(props: Props<T>) => {
+  const { form } = props;
+  const fieldName: Path<T> = 'paymentMethod' as Path<T>;
   return (
     <section className='w-full flex flex-col gap-4 p-6 border border-gray-1 rounded-[8px] overflow-y-auto max-h-[665px] scroll-beutifull'>
       <p className='text-[20px] font-medium text-gray-9'>Order Summery</p>
@@ -89,26 +93,43 @@ const SubTotal = (props: Props) => {
         </div>
       </div>
       <p className='text-[20px] font-extrabold text-gray-9'>Payment Method</p>
-      <RadioGroup value={selectedValue} onValueChange={setSelectedValue} required={true}>
-        <div className='flex items-center py-2.5 gap-2'>
-          <RadioGroupCustom value={`cashOnDelivery`} aria-label='Radio' />
-          <Label htmlFor={`cashOnDelivery`} className='font-medium text-[14px] flex items-center gap-2'>
-            <span className='text-[14px] text-gray-9 font-medium'>Cash on Delivery</span>
-          </Label>
-        </div>
-        <div className='flex items-center py-2.5 gap-2'>
-          <RadioGroupCustom value={`internationalPayment`} aria-label='Radio' />
-          <Label htmlFor={`internationalPayment`} className='font-medium text-[14px] flex items-center gap-2'>
-            <span className='text-[14px] text-gray-9 font-medium'>Paypal/Visa/Mastercard</span>
-          </Label>
-        </div>
-        <div className='flex items-center py-2.5 gap-2'>
-          <RadioGroupCustom value={`banking`} aria-label='Radio' />
-          <Label htmlFor={`banking`} className='font-medium text-[14px] flex items-center gap-2'>
-            <span className='text-[14px] text-gray-9 font-medium'>Banking</span>
-          </Label>
-        </div>
-      </RadioGroup>
+      <FormField
+        control={form.control}
+        name={fieldName}
+        render={({ field }) => (
+          <FormItem>
+            <FormControl>
+              <RadioGroup defaultValue={field.value} onValueChange={field.onChange} required={true}>
+                <div className='flex items-center py-2.5 gap-2'>
+                  <FormControl>
+                    <RadioGroupCustom value={`cashOnDelivery`} aria-label='Radio' />
+                  </FormControl>
+                  <Label htmlFor={`cashOnDelivery`} className='font-medium text-[14px] flex items-center gap-2'>
+                    <span className='text-[14px] text-gray-9 font-medium'>Cash on Delivery</span>
+                  </Label>
+                </div>
+                <div className='flex items-center py-2.5 gap-2'>
+                  <FormControl>
+                    <RadioGroupCustom value={`internationalPayment`} aria-label='Radio' />
+                  </FormControl>
+                  <Label htmlFor={`internationalPayment`} className='font-medium text-[14px] flex items-center gap-2'>
+                    <span className='text-[14px] text-gray-9 font-medium'>Paypal/Visa/Mastercard</span>
+                  </Label>
+                </div>
+                <div className='flex items-center py-2.5 gap-2'>
+                  <FormControl>
+                    <RadioGroupCustom value={`banking`} aria-label='Radio' />
+                  </FormControl>
+                  <Label htmlFor={`banking`} className='font-medium text-[14px] flex items-center gap-2'>
+                    <span className='text-[14px] text-gray-9 font-medium'>Banking</span>
+                  </Label>
+                </div>
+              </RadioGroup>
+            </FormControl>
+          </FormItem>
+        )}
+      />
+
       <div className='h-[52px] w-full'>
         <ButtonGlobal type='submit' size='small' className='group z-50 w-full ' animation='middle' coverage='660%'>
           <div className='py-[2.5px] flex items-center group-hover:animate-white-to-green animate-green-to-white gap-2'>

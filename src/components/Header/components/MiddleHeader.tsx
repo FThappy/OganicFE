@@ -6,9 +6,7 @@ import { Link } from '@/i18n/routing';
 import React from 'react';
 import { FaRegHeart } from 'react-icons/fa6';
 
-type Props = {};
-
-const MiddleHeader = (props: Props) => {
+const MiddleHeader = () => {
   return (
     <section className='bg-white'>
       <section className='flex h-[93px] items-center justify-between container '>

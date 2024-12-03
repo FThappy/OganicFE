@@ -1,9 +1,9 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { ControllerRenderProps, Path, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import { checkValidGmail } from '@/utils/utlilsEmail';
 import { checkValidPhoneNumber } from '@/utils/utilsPhone';
 import InputString from '../Form/InputCustom/InputString';
@@ -67,16 +67,6 @@ const formSchema = z.object({
     .max(250, {
       message: 'Value at least 250 characters'
     }),
-  city: z
-    .string({
-      required_error: 'This field is required'
-    })
-    .min(1, {
-      message: 'This field is required'
-    })
-    .max(250, {
-      message: 'Value at least 250 characters'
-    }),
   zipCode: z
     .string({
       required_error: 'This field is required'
@@ -113,6 +103,9 @@ const formSchema = z.object({
     .refine(val => checkValidPhoneNumber(val), {
       message: 'Phone is not valid'
     }),
+  paymentMethod: z.string({
+    required_error: 'This field is required'
+  }),
   notes: z
     .string({
       required_error: 'This field is required'
@@ -126,7 +119,8 @@ const CheckoutForm = (props: Props) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: ''
+      username: '',
+      paymentMethod: 'cashOnDelivery'
     }
   });
   const { watch } = form;
@@ -369,7 +363,7 @@ const CheckoutForm = (props: Props) => {
           </div>
         </div>
         <div className='flex flex-col w-[424px]'>
-          <SubTotal />
+          <SubTotal form={form} />
         </div>
       </form>
     </Form>
