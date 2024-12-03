@@ -289,7 +289,7 @@ const CheckoutForm = (props: Props) => {
                 </FormItem>
               )}
             />
-            <div className='col-span-3 flex items-center gap-4'>
+            <div className='col-span-3 flex items-start gap-4'>
               <FormField
                 control={form.control}
                 name='email'
@@ -325,7 +325,18 @@ const CheckoutForm = (props: Props) => {
                         placeholder='Your phone number'
                         {...field}
                         className={`h-[52px] 
-                      ${form.formState.errors.phone ? 'border border-red-500 focus-visible:outline-none focus-visible:border-red-500' : ''}`}
+                        ${
+                          form.formState.errors.phone
+                            ? '[&_input]:border-red-500 ' +
+                              '[&_input]:focus-visible:outline-none ' +
+                              '[&_input]:focus-visible:border-red-500 ' +
+                              '[&_button]:border-red-500 ' +
+                              '[&_button]:focus-visible:outline-none ' +
+                              '[&_button]:focus-visible:border-red-500 ' +
+                              '[&_button]:focus-visible:border-r-0 ' +
+                              '[&_button]:border-r-0'
+                            : ''
+                        }`}
                       />
                     </FormControl>
                     <FormMessage />

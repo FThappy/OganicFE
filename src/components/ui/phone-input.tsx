@@ -28,9 +28,9 @@ const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> = React.forwa
       ref={ref}
       className={cn('flex', className, 'border-none')}
       flagComponent={FlagComponent}
-      countrySelectComponent={selectProps => <CountrySelect {...selectProps} className={className} />}
+      countrySelectComponent={CountrySelect}
       input='true'
-      inputComponent={inputProps => <InputComponent {...inputProps} className={cn(inputProps.className, className)} />}
+      inputComponent={InputComponent}
       smartCaret={false}
       /**
        * Handles the onChange event.
