@@ -10,7 +10,6 @@ import { ButtonGlobal } from '@/components/ButtonGlobal/Button';
 import InputString from '@/components/Form/InputCustom/InputString';
 import { Link } from '@/i18n/routing';
 import { URL_PATHS } from '@/constants/url-path';
-import Icons from '@/constants/svgIcon';
 import { checkValidPhoneNumber } from '@/utils/utilsPhone';
 import { PhoneInput } from '@/components/ui/phone-input';
 import { SingleValue } from 'react-select';
@@ -21,7 +20,6 @@ import { phoneCodeCountry } from '@/constants/phoneCodeCountry';
 import { checkValidPassword } from '@/utils/utilisPassword';
 import { Checkbox } from '@/components/ui/checkbox';
 import PasswordStrengthMeter from '@/components/Signup/PasswordStrengthMeter';
-import { Input } from '@/components/ui/input';
 
 const SelectReact = dynamic(() => import('react-select'), {
   ssr: false,
@@ -66,16 +64,6 @@ const SignUpPage = () => {
           message: 'Value at least 250 characters'
         }),
       country: z
-        .string({
-          required_error: 'This field is required'
-        })
-        .min(1, {
-          message: 'This field is required'
-        })
-        .max(250, {
-          message: 'Value at least 250 characters'
-        }),
-      city: z
         .string({
           required_error: 'This field is required'
         })

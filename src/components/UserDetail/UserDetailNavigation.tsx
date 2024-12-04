@@ -9,27 +9,27 @@ const navigation = [
   {
     title: 'Dashboard',
     link: URL_PATHS.dashboard,
-    icons: <LayoutDashboard className='w-6 h-6 text-[24px] text-gray-6 group-hover:text-gray-9' />
+    icons: <LayoutDashboard className='w-6 h-6 text-[24px] group-hover:text-gray-9' />
   },
   {
     title: 'Order History',
     link: URL_PATHS.orderHistory,
-    icons: <RefreshCw className='w-6 h-6 text-[24px] text-gray-6 group-hover:text-gray-9' />
+    icons: <RefreshCw className='w-6 h-6 text-[24px]  group-hover:text-gray-9' />
   },
   {
     title: 'Wishlist',
     link: URL_PATHS.wishList,
-    icons: <Heart className='w-6 h-6 text-[24px] text-gray-6 group-hover:text-gray-9' />
+    icons: <Heart className='w-6 h-6 text-[24px]  group-hover:text-gray-9' />
   },
   {
     title: 'Shopping Cart',
     link: URL_PATHS.shoppingCart,
-    icons: <HiOutlineShoppingBag className='w-6 h-6 text-[24px] text-gray-6 group-hover:text-gray-9' />
+    icons: <HiOutlineShoppingBag className='w-6 h-6 text-[24px] group-hover:text-gray-9' />
   },
   {
     title: 'Settings',
     link: URL_PATHS.setting,
-    icons: <Settings className='w-6 h-6 text-[24px] text-gray-6 group-hover:text-gray-9' />
+    icons: <Settings className='w-6 h-6 text-[24px]  group-hover:text-gray-9' />
   }
 ];
 
@@ -43,11 +43,11 @@ const UserDetailNavigation = () => {
           key={index}
           className={`px-5 py-4 cursor-pointer group 
           hover:bg-greenGray-0 flex items-center gap-2.5 
-          border-l-4 border-l-transparent hover:border-l-4 
-          hover:border-l-green-hard ${pathname === item.link ? 'bg-greenGray-0 border-l-4 border-l-green-hard' : ''}`}
+           hover:border-l-4 
+          hover:border-l-green-hard ${pathname === item.link ? 'bg-greenGray-0 border-l-4 border-l-green-hard text-gray-9' : 'border-l-4 border-l-transparent text-gray-6'}`}
         >
           {item.icons}
-          <Link href={item.link} className='text-gray-6 group-hover:text-gray-9'>
+          <Link href={item.link} className=' group-hover:text-gray-9'>
             {item.title}
           </Link>
         </div>

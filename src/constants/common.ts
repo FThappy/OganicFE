@@ -4,7 +4,7 @@ export enum MODAL_ACTIONS {
   VIEW = 'VIEW'
 }
 export const DATE_FORMAT_TYPE = {
-  dmy: 'DD/MM/YYYY',
+  dmy: 'dd/MM/yyyy',
   ymd: 'YYYY/MM/DD',
   dateTimeFormat: 'DD/MM/YYYY HH:mm',
   dateTimeFormatMinute: 'DD/MM/YYYY HH:mm:ss'
