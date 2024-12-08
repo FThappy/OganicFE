@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -13,6 +13,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Link } from '@/i18n/routing';
 import { URL_PATHS } from '@/constants/url-path';
 import Icons from '@/constants/svgIcon';
+import { Eye, EyeOff } from 'lucide-react';
 
 type Props = {};
 const formSchema = z.object({
@@ -49,6 +50,7 @@ const LoginPage = (props: Props) => {
       password: ''
     }
   });
+  const [viewPass, setViewPass] = useState<boolean>(false);
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
@@ -85,12 +87,34 @@ const LoginPage = (props: Props) => {
                   Password <span className='text-red-500'>*</span>
                 </Label>
                 <FormControl>
-                  <Input
-                    className={`rounded-[8px] px-[14px] pr-[64px] py-[10px] h-[52px] bg-white ${form.formState.errors.password ? 'border border-red-500 focus-visible:outline-none focus-visible:border-red-500 focus-visible:ring-red-500 focus-visible:ring-1 ' : ''}`}
-                    placeholder='Password'
-                    {...field}
-                    maxLength={255}
-                  />
+                  <div className='relative'>
+                    <InputString
+                      type={viewPass ? 'text' : 'password'}
+                      placeholder='Your Comfirm Passowrd'
+                      classNames='pr-12'
+                      max={250}
+                      error={form.formState.errors.password}
+                      field={field}
+                      att={{ autoComplete: 'new-password' }}
+                    />
+                    {viewPass ? (
+                      <EyeOff
+                        className='absolute right-2 top-[1rem] cursor-pointer'
+                        onClick={e => {
+                          e.preventDefault();
+                          setViewPass(false);
+                        }}
+                      />
+                    ) : (
+                      <Eye
+                        className='absolute right-2 top-[1rem] cursor-pointer'
+                        onClick={e => {
+                          e.preventDefault();
+                          setViewPass(true);
+                        }}
+                      />
+                    )}
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>

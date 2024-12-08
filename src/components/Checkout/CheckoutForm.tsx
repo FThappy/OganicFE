@@ -123,8 +123,6 @@ const CheckoutForm = (props: Props) => {
       paymentMethod: 'cashOnDelivery'
     }
   });
-  const { watch } = form;
-  // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
@@ -133,7 +131,6 @@ const CheckoutForm = (props: Props) => {
   const errorFunc = (err: any) => {
     console.log('err', err);
   };
-  console.log(watch('country'));
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit, errorFunc)} className='flex gap-[22px] items-start '>

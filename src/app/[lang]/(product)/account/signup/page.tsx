@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -20,6 +20,8 @@ import { phoneCodeCountry } from '@/constants/phoneCodeCountry';
 import { checkValidPassword } from '@/utils/utilisPassword';
 import { Checkbox } from '@/components/ui/checkbox';
 import PasswordStrengthMeter from '@/components/Signup/PasswordStrengthMeter';
+import { DateTimePicker } from '@/components/ui/datetimeInput';
+import { Eye, EyeOff } from 'lucide-react';
 
 const SelectReact = dynamic(() => import('react-select'), {
   ssr: false,
@@ -53,6 +55,9 @@ const SignUpPage = () => {
         .max(250, {
           message: 'Value at least 250 characters'
         }),
+      birth: z.date({
+        required_error: 'This field is required'
+      }),
       address: z
         .string({
           required_error: 'This field is required'
@@ -135,16 +140,18 @@ const SignUpPage = () => {
         .refine(val => checkValidPassword(val), {
           message: 'Password is not valid'
         }),
-      terms: z.boolean({
-        message: 'This field is required'
-      })
+      terms: z
+        .boolean({
+          message: 'This field is required'
+        })
+        .optional()
     })
     .superRefine(({ rePassword, password }, ctx) => {
       if (rePassword !== password) {
         ctx.addIssue({
           code: 'custom',
           message: 'The passwords did not match',
-          path: ['confirmPassword']
+          path: ['rePassword']
         });
       }
     });
@@ -157,6 +164,9 @@ const SignUpPage = () => {
   });
 
   const { watch } = form;
+  const [viewPass, setViewPass] = useState<boolean>(false);
+  const [viewComfirmPass, setViewComfirmPass] = useState<boolean>(false);
+
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
@@ -174,7 +184,7 @@ const SignUpPage = () => {
           className=' bg-white shadow-lg border rounded-[8px] grid grid-cols-3 gap-4 px-6 pt-6 pb-8'
         >
           <p className='text-gray-9 font-semibold text-[32px] text-center col-span-3'>Create Account</p>
-          <div className='col-span-3'>
+          <div className='col-span-2'>
             <FormField
               control={form.control}
               name='username'
@@ -196,6 +206,27 @@ const SignUpPage = () => {
               )}
             />
           </div>
+          <FormField
+            control={form.control}
+            name='birth'
+            render={({ field }) => (
+              <FormItem className='col-span-1 w-[275.125px]'>
+                <Label className='text-sm '>
+                  BirthDay <span className='text-red-500'>*</span>
+                </Label>{' '}
+                <FormControl>
+                  <DateTimePicker
+                    value={field.value}
+                    onChange={field.onChange}
+                    displayFormat={{ hour24: 'PPP' }}
+                    granularity='day'
+                    className='rounded-[8px] px-[14px] py-[10px] h-[52px]'
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <FormField
             control={form.control}
             name='address'
@@ -345,7 +376,7 @@ const SignUpPage = () => {
               )}
             />
           </div>
-          <div className='col-span-3 flex items-center gap-4'>
+          <div className='col-span-3 flex items-start gap-4'>
             <FormField
               control={form.control}
               name='password'
@@ -355,15 +386,36 @@ const SignUpPage = () => {
                     Password <span className='text-red-500'>*</span>
                   </Label>
                   <FormControl>
-                    <InputString
-                      type='password'
-                      placeholder='Your Comfirm Passowrd'
-                      max={250}
-                      error={form.formState.errors.password}
-                      field={field}
-                      att={{ autoComplete: 'new-password' }}
-                    />
+                    <div className='relative'>
+                      <InputString
+                        type={viewPass ? 'text' : 'password'}
+                        placeholder='Your Comfirm Passowrd'
+                        classNames='pr-12'
+                        max={250}
+                        error={form.formState.errors.password}
+                        field={field}
+                        att={{ autoComplete: 'new-password' }}
+                      />
+                      {viewPass ? (
+                        <EyeOff
+                          className='absolute right-2 top-[1rem] cursor-pointer'
+                          onClick={e => {
+                            e.preventDefault();
+                            setViewPass(false);
+                          }}
+                        />
+                      ) : (
+                        <Eye
+                          className='absolute right-2 top-[1rem] cursor-pointer'
+                          onClick={e => {
+                            e.preventDefault();
+                            setViewPass(true);
+                          }}
+                        />
+                      )}
+                    </div>
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -377,14 +429,34 @@ const SignUpPage = () => {
                     Comfirm Passowrd <span className='text-red-500'>*</span>
                   </Label>
                   <FormControl>
-                    <InputString
-                      type='password'
-                      placeholder='Your Comfirm Passowrd'
-                      max={250}
-                      error={form.formState.errors.rePassword}
-                      field={field}
-                    />
+                    <div className='relative'>
+                      <InputString
+                        type={viewComfirmPass ? 'text' : 'password'}
+                        placeholder='Your Comfirm Passowrd'
+                        max={250}
+                        error={form.formState.errors.rePassword}
+                        field={field}
+                      />
+                      {viewComfirmPass ? (
+                        <EyeOff
+                          className='absolute right-2 top-[1rem] cursor-pointer'
+                          onClick={e => {
+                            e.preventDefault();
+                            setViewComfirmPass(false);
+                          }}
+                        />
+                      ) : (
+                        <Eye
+                          className='absolute right-2 top-[1rem] cursor-pointer'
+                          onClick={e => {
+                            e.preventDefault();
+                            setViewComfirmPass(true);
+                          }}
+                        />
+                      )}
+                    </div>
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />

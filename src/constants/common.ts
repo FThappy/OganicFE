@@ -10,4 +10,6 @@ export const DATE_FORMAT_TYPE = {
   dateTimeFormatMinute: 'DD/MM/YYYY HH:mm:ss'
 };
 
-export const ALLOW_FILE_TYPE = ['jpg', 'jpeg', 'png', 'gif'];
+export const MAX_FILE_SIZE = 1024 * 1024 * 5;
+export const ACCEPTED_IMAGE_MIME_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+export const ACCEPTED_IMAGE_TYPES = ['jpeg', 'jpg', 'png', 'webp'];
