@@ -7,7 +7,6 @@ import { URL_PATHS } from '@/constants/url-path';
 import { Link } from '@/i18n/routing';
 import { format } from 'date-fns';
 import PaginationPage from '@/components/Pagination/Pagination';
-type Props = {};
 type OrderHistoryType = {
   id: string;
   date: string;
@@ -88,7 +87,7 @@ const FAKE_DATA: OrderHistoryType[] = [
     status: 'Completed'
   }
 ];
-const OrderHistory = (props: Props) => {
+const OrderHistory = () => {
   const [inPage, setInPage] = useState<number>(2);
 
   const handlePageChange = (page: number) => {
